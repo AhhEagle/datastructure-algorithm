@@ -1,0 +1,19 @@
+{
+  "name": "datastructure-algorithm",
+  "version": "1.0.0",
+  "description": "Codes to solve various data structure and algorithms types",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhhEagle/datastructure-algorithm.git"
+  },
+  "author": "Olateju Oladimeji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhhEagle/datastructure-algorithm/issues"
+  },
+  "homepage": "https://github.com/AhhEagle/datastructure-algorithm#readme"
+}
