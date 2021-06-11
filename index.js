@@ -45,4 +45,43 @@ function maxChar(n){
  return maxchar;
 
 }
-console.log(maxChar('oladimejioii'));
+//console.log(maxChar('oladimejioii'));
+
+//O(n^2)
+function duplicate(n){
+    let dupValue = [];
+    for(let i = 0; i<n.length; i++){
+        for(let m = 0; m<n.length; m++){
+            if(i === m) continue;
+            if (n[i] === n[m]){
+                dupValue.push(n[i]);
+            }
+        }
+    }
+    return dupValue;
+}
+//console.log(duplicate([1,3,3,6]));
+
+//Better written has:
+function betterDuplicate(n){
+    let valuesIn = Object.create(null);
+    for(let i  = 0; i<n.length; i++){
+        let value = n[i];
+        if(value in valuesIn){
+            valuesIn[value] = valuesIn[value] + 1
+        } else{
+            valuesIn[value] = 1
+        }
+    }
+    let max = 0;
+    let maxValue ;
+    for (value in valuesIn){
+        if(valuesIn[value] > max){
+            max = valuesIn[value];
+            maxValue = value;
+        }
+    }
+    return maxValue;
+
+}
+console.log(betterDuplicate([1,3,3,6]));
