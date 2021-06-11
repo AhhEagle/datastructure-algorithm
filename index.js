@@ -2,14 +2,14 @@
 function multiply(j){
     return j * 5;
 }
-console.log(multiply(10));
-console.log(multiply(2));
+//console.log(multiply(10));
+//console.log(multiply(2));
 
 function OddorEven(j){
   return j % 2 ? 'Odd' : 'Even';
 }
-console.log(OddorEven(20));
-console.log(OddorEven(30001));
+//console.log(OddorEven(20));
+//console.log(OddorEven(30001));
 
 //O(n)
 //finding the largest item in an unsorted array
@@ -24,5 +24,25 @@ function max(n){
     }
     return max
 }
-console.log(max([3,2,1]));
-console.log(max([10,50,30,80,100,90]));
+//console.log(max([3,2,1]));
+//console.log(max([10,50,30,80,100,90]));
+
+
+function maxChar(n){
+ let characters = {};
+ for(let character of n){
+     console.log(character);
+     characters[character] = characters[character] + 1 || 1;
+ }
+ let maxCount = 0;
+ let maxchar = null;
+ for(let character in characters){
+     if(characters[character] > maxCount){
+         maxCount = characters[character]
+         maxchar = character;
+     }
+ }
+ return maxchar;
+
+}
+console.log(maxChar('oladimejioii'));
