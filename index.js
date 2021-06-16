@@ -84,4 +84,25 @@ function betterDuplicate(n){
     return maxValue;
 
 }
-console.log(betterDuplicate([1,3,3,6]));
+//console.log(betterDuplicate([1,3,3,6]));
+
+//O(n^2) Bubble Sort
+function sort(n){
+    for(let i =0; i <n.length; i++){
+        let outer = n[i]
+        for(let inn = i + 1; inn < n.length; inn ++){
+            let inner = n[inn];
+
+            if(outer > inner){
+                n[i] = inner;
+                n[inn] = outer
+                outer = n[i];
+                inner = n[inn];
+            }
+
+        }
+    }
+    return n
+}
+
+console.log(sort([1,3,6,5]));
