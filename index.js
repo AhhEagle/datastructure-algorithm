@@ -105,4 +105,20 @@ function sort(n){
     return n
 }
 
-console.log(sort([1,3,6,5]));
+//console.log(sort([1,3,6,5]));
+
+//Polynomial O(n^c)
+function polynomial(n){
+    const result = [];
+    for(let i = 0; i<n; i++){
+        for(let j = 0; j<n; j++){
+            for(let k = 0; k<n; k++){
+                if(2 *i + 6*j + 4*k === 50){
+                    result.push({i, j, k})
+                }
+            }
+        }
+    }
+    return result;
+}
+console.log(polynomial(10));
