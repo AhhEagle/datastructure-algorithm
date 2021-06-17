@@ -121,4 +121,20 @@ function polynomial(n){
     }
     return result;
 }
-console.log(polynomial(10));
+//console.log(polynomial(10));
+
+//Binary Search O(log n)
+function search(n, element, off = 0){
+ const half = parseInt(n.length/2);
+ const current = n[half];
+   if (current === element){
+     return off + half
+ } else if (element > current){
+     const divide =  n.slice(half);
+     return search(divide, element, off+half);
+ } else{
+     const secondDivide = n.slice(0, half);
+     return search(secondDivide, element, off);
+ }
+}
+console.log(search([2,4,3,6,8,10], 8));
