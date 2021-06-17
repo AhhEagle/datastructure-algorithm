@@ -138,3 +138,5 @@ function search(n, element, off = 0){
  }
 }
 console.log(search([2,4,3,6,8,10], 8));
+
+//Merge Sort O(nlogn)
