@@ -140,3 +140,15 @@ function search(n, element, off = 0){
 console.log(search([2,4,3,6,8,10], 8));
 
 //Merge Sort O(nlogn)
+function sort(n){
+const half = parseInt(n.length/2);
+if(n.length < 2){
+    return n;
+} else if(n.length = 2){
+    return n[0] > n[1] ? [n[1],n[0]] : n;
+}
+return mergeSorted(sort(n.slice(0,half)), sort(n.slice(half)));
+
+}
+
+function mergeSorted()
