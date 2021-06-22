@@ -139,25 +139,28 @@ function search(n, element, off = 0){
      return search(secondDivide, element, off);
  }
 }
-console.log(search([2,4,3,6,8,10], 8));
+//console.log(search([2,4,3,6,8,10], 8));
 
 //Merge Sort O(nlogn)
 function sort(n){
-const half = parseInt(n.length/2);
+const half = parseInt(n.length/2, 10);
 if(n.length < 2){
     return n;
-} else if(n.length = 2){
+} 
+
+if(n.length === 2){
     return n[0] > n[1] ? [n[1],n[0]] : n;
 }
-return mergeSorted(sort(n.slice(0,half)), sort(n.slice(half)));
 
+return mergeSorted(sort(n.slice(0,half)), sort(n.slice(half)));
 }
 
 function mergeSorted(array1=[], array2=[]){
+    console.log(array1, array2);
     const merged = [];
     let arrayIndex = 0;
     let arrayIndex2 = 0;
-    while (arrayIndex < array1.length || arrayIndex2 < array2){
+    while (arrayIndex < array1.length || arrayIndex2 < array2.length){
         if(arrayIndex >= array1.length || array1[arrayIndex] > array2[arrayIndex2]){
             merged.push(array2[arrayIndex2]);
             arrayIndex2 += 1
@@ -169,3 +172,4 @@ function mergeSorted(array1=[], array2=[]){
     return merged;
 }
 
+console.log(sort([3,4,1,5,6,2]))
