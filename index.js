@@ -28,24 +28,7 @@ function max(n){
 //console.log(max([10,50,30,80,100,90]));
 
 
-function maxChar(n){
- let characters = {};
- for(let character of n){
-     console.log(character);
-     characters[character] = characters[character] + 1 || 1;
- }
- let maxCount = 0;
- let maxchar = null;
- for(let character in characters){
-     if(characters[character] > maxCount){
-         maxCount = characters[character]
-         maxchar = character;
-     }
- }
- return maxchar;
 
-}
-//console.log(maxChar('oladimejioii'));
 
 //O(n^2)
 function duplicate(n){
@@ -85,6 +68,25 @@ function betterDuplicate(n){
 
 }
 //console.log(betterDuplicate([1,3,3,6]));
+
+function maxChar(n){
+    let characters = {};
+    for(let character of n){
+        console.log(character);
+        characters[character] = characters[character] + 1 || 1;
+    }
+    let maxCount = 0;
+    let maxchar = null;
+    for(let character in characters){
+        if(characters[character] > maxCount){
+            maxCount = characters[character]
+            maxchar = character;
+        }
+    }
+    return maxchar;
+   
+   }
+   //console.log(maxChar('oladimejioii'));
 
 //O(n^2) Bubble Sort
 function sort(n){
@@ -151,4 +153,19 @@ return mergeSorted(sort(n.slice(0,half)), sort(n.slice(half)));
 
 }
 
-function mergeSorted()
+function mergeSorted(array1=[], array2=[]){
+    const merged = [];
+    let arrayIndex = 0;
+    let arrayIndex2 = 0;
+    while (arrayIndex < array1.length || arrayIndex2 < array2){
+        if(arrayIndex >= array1.length || array1[arrayIndex] > array2[arrayIndex2]){
+            merged.push(array2[arrayIndex2]);
+            arrayIndex2 += 1
+        } else {
+            merged.push(array1[arrayIndex]);
+            arrayIndex +=1;
+        }
+    }
+    return merged;
+}
+
