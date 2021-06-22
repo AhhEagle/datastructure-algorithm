@@ -172,4 +172,20 @@ function mergeSorted(array1=[], array2=[]){
     return merged;
 }
 
-console.log(sort([3,4,1,5,6,2]))
+//console.log(sort([3,4,1,5,6,2]));
+
+//O(2^n) Exponential time
+//i.e Power set
+function power(n = ''){
+const array = Array.from(n);
+const base = [''];
+const result = array.reduce((p, e) =>{
+    const previous = p.map(el =>{
+        return  `${el}${e}`;
+    });
+    return p.concat(previous);
+}, base);
+return result;
+}
+
+console.log(power('dimeji'));
