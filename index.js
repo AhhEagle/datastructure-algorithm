@@ -156,7 +156,6 @@ return mergeSorted(sort(n.slice(0,half)), sort(n.slice(half)));
 }
 
 function mergeSorted(array1=[], array2=[]){
-    console.log(array1, array2);
     const merged = [];
     let arrayIndex = 0;
     let arrayIndex2 = 0;
@@ -190,5 +189,21 @@ return result;
 
 //console.log(power('dimeji'));
 
-
+//O(n!) 
+//Factorial permutations and combinations
+function getPermutation(string, prefix=''){
+    let array = Array.from(string)
+    if(string.length <= 1){
+        return [prefix + string]
+    }
+    return array.reduce((result, char, index)=>{
+        console.log(result, char, index);
+        const reminder = string.slice(0, index) + string.slice(index + 1);
+        console.log(reminder);
+        result = result.concat(getPermutation(reminder, prefix + char));
+        console.log(result);
+        return result;
+    }, []);
+}
+console.log(getPermutation('abc'));
 
