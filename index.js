@@ -188,4 +188,7 @@ const result = array.reduce((p, e) =>{
 return result;
 }
 
-console.log(power('dimeji'));
+//console.log(power('dimeji'));
+
+
+
