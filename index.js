@@ -205,5 +205,5 @@ function getPermutation(string, prefix=''){
         return result;
     }, []);
 }
-console.log(getPermutation('abc'));
+console.log(getPermutation('abcdefghijk'));
 
