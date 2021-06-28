@@ -205,5 +205,42 @@ function getPermutation(string, prefix=''){
         return result;
     }, []);
 }
-console.log(getPermutation('abcdefghijk'));
+//console.log(getPermutation('abcdefghijk'));
 
+//let n =0;
+//let result= true;
+// function isIsogram(str = ""){
+//     let j = str
+//   let k = j.toString().split("");
+//   k.shift();
+//   console.log(k.length)
+  
+//   if(k.includes(j[n])){
+//     result = false;
+//     return result;  
+//   }
+  
+  
+//   //console.log('n:'+n+'k: '+k);
+//   isIsogram(k);
+//   return result;
+  
+//}
+
+//console.log(isIsogram("oladmeji"))
+
+// function isIsogram(str){
+//     let newObj = Object.create(null);
+//     if(str.length === 0){
+//       return true
+//     }
+//     for(let value of str.toLowerCase()){
+//       newObj[value] = newObj[value] + 1 || 1;
+//     }
+//     for(let values in newObj){
+//       if (newObj[values] > 1){
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
