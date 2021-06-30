@@ -23,4 +23,16 @@ this.remove = function(element){
     }
     return false;
 }
+this.size = function(){
+    return collection.length;
+}
+this.union = function(otherSet){
+    let unionSet = new Set();
+    let firstSet = this.values();
+    let secondSet = otherSet.values();
+    firstSet.forEach((e)=> unionSet.add(e));
+    secondSet.forEach((e)=> unionSet.add(e));
+    return unionSet;
+}
+
 }
