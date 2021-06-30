@@ -15,5 +15,12 @@ this.add= function(element){
     return false;
 };
 
-this.remove = function(element)
+this.remove = function(element){
+    if(this.has(element)){
+        let index =  collection.indexOf(element);
+        collection.splice(index,1);
+        return true;
+    }
+    return false;
+}
 }
