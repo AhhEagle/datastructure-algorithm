@@ -27,12 +27,18 @@ this.size = function(){
     return collection.length;
 }
 this.union = function(otherSet){
-    let unionSet = new Set();
+    let unionSet = new mySet();
     let firstSet = this.values();
     let secondSet = otherSet.values();
     firstSet.forEach((e)=> unionSet.add(e));
     secondSet.forEach((e)=> unionSet.add(e));
     return unionSet;
+}
+this.intersection = function(otherSet){
+    let intersectionSet = new mySet();
+    let firstSet = this.values();
+    firstSet.forEach((e)=> {if(otherSet.has(e)){intersectionSet.add(e)}});
+    return intersectionSet;
 }
 
 }
