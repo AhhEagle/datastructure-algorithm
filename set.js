@@ -47,5 +47,18 @@ this.difference = (otherSet)=>{
   firstSet.forEach((e)=>{if(!otherSet.has(e)) differenceSet.add(e)});
   return differenceSet;
 };
-
+this.subset = (otherSet)=>{
+    let firstSet = this.values();
+    return firstSet.every((value)=>{ return otherSet.has(value)});
 }
+}
+
+let setOne = new mySet();
+let setTwo = new mySet();
+setOne.add("a");
+setTwo.add("b");
+setTwo.add("c");
+setTwo.add("a");
+setTwo.add("d");
+console.log(setOne.subset(setTwo));
+console.log(setOne.intersection(setTwo).values());
