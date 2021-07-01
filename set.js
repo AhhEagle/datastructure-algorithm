@@ -41,4 +41,11 @@ this.intersection = function(otherSet){
     return intersectionSet;
 }
 
+this.difference = (otherSet)=>{
+  let differenceSet = new mySet();
+  let firstSet = this.values();
+  firstSet.forEach((e)=>{if(!otherSet.has(e)) differenceSet.add(e)});
+  return differenceSet;
+};
+
 }
