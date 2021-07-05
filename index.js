@@ -47,7 +47,7 @@ function duplicate(n){
 
 //Better written has:
 function betterDuplicate(n){
-    let valuesIn = Object.create(null);
+    let valuesIn = {};
     for(let i  = 0; i<n.length; i++){
         let value = n[i];
         if(value in valuesIn){
