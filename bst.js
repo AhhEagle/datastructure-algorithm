@@ -89,5 +89,14 @@ class BST{
         return false;
     }
 
-    
+    remove(data){
+        const removeNode = function (node, data){
+            if( node == null){
+                return null;
+            }
+            if (data == node.data){
+                
+            }
+        }
+    }
 }
