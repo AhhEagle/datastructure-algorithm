@@ -95,6 +95,14 @@ class BST{
                 return null;
             }
             if (data == node.data){
+                //node has no children
+                if(node.left == null && node.right == null){
+                    return null;
+                }
+                //node has no left child
+                if (node.left == null){
+                    return node.right;
+                }
                 
             }
         }
