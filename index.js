@@ -172,6 +172,7 @@ function mergeSorted(array1=[], array2=[]){
 }
 
 //console.log(sort([3,4,1,5,6,2]));
+//console.log(mergeSorted(['aliyu', 'cataloguer', 'egg'], ['babade', 'dog', 'fish']))
 
 //O(2^n) Exponential time
 //i.e Power set
@@ -224,3 +225,10 @@ function getPermutation(string, prefix=''){
 //     }
 //     return true;
 //   }
+
+function mergeTwo(arr1, arr2) {
+    let result = [...arr1, ...arr2];
+    return result.sort((a,b) => a-b);
+  }
+  
+  //console.log(mergeTwo([1,3,5,7], [2,4,6]));
