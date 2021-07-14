@@ -127,7 +127,8 @@ class BST{
         this.root = removeNode(this.root, data);
     }
 }
-
+//Min height is the distance from the root node to the first leave node without two children
+//Max height is the distance from the root node to the last node on the tree
 const bst = new BST();
 bst.add(6);
 bst.add(5);
