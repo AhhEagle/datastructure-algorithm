@@ -1,5 +1,5 @@
 # datastructure-algorithm
-A project to show code examples for time and space complexities.
+A project to show code examples for time and space complexities as well as some basic algorithm
 ### Deployment
 Clone the project and run
 `npm install`
