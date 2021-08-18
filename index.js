@@ -198,11 +198,8 @@ function getPermutation(string, prefix=''){
         return [prefix + string]
     }
     return array.reduce((result, char, index)=>{
-        console.log(result, char, index);
         const reminder = string.slice(0, index) + string.slice(index + 1);
-        console.log(reminder);
         result = result.concat(getPermutation(reminder, prefix + char));
-        console.log(result);
         return result;
     }, []);
 }
@@ -232,3 +229,21 @@ function getPermutation(string, prefix=''){
   }*/
   
   //console.log(mergeTwo([1,3,5,7], [2,4,6]));
+
+  function fizzbuzz(){
+    for(let i=0;i<100;)
+    console.log(
+      ( ++i%3 ? '' : 'fizz' ) + ( i%5 ? '' : 'buzz' ) || i
+    )
+  }
+  //console.log(fizzbuzz());
+
+  function fizzbuzz2(){
+    for (var i=1; i < 101; i++){
+        if (i % 15 == 0) console.log("FizzBuzz");
+        else if (i % 3 == 0) console.log("Fizz");
+        else if (i % 5 == 0) console.log("Buzz");
+        else console.log(i);
+    }
+  }
+  console.log(fizzbuzz2());
