@@ -20,7 +20,19 @@ function PriorityQueue(){
             }
         }
     };
+    this.front = function(){
+        return collection[0];
+    }
+    this.size = function(){
+        return collection.length;
+    }
     this.isEmpty = function(){
         return(collection.length === 0);
     }
 }
+
+let testQueue = new PriorityQueue();
+testQueue.enqueue(['ola ola', 3]);
+testQueue.enqueue(['teju teju', 2]);
+testQueue.enqueue(['ope ope', 1]);
+testQueue.printCollection();
