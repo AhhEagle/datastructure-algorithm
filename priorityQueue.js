@@ -20,5 +20,7 @@ function PriorityQueue(){
             }
         }
     };
-    
+    this.isEmpty = function(){
+        return(collection.length === 0);
+    }
 }
