@@ -8,6 +8,15 @@ function Queue(){
     this.isEmpty= ()=>{return collection.length === 0};
 }
 
+function PriorityQueue(){
+    let collection = [];
+    this.printCollection =  function(){
+        console.log(collection)
+    };
+    this.enqueue = function(element){
+    }
+}
+
 let q = new Queue();
 q.enqueue('a');
 q.enqueue('b');
