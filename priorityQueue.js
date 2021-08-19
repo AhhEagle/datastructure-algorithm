@@ -20,6 +20,10 @@ function PriorityQueue(){
             }
         }
     };
+    this.dequeue = function(){
+        let result = collection.shift();
+        return result[0];
+    }
     this.front = function(){
         return collection[0];
     }
@@ -35,4 +39,7 @@ let testQueue = new PriorityQueue();
 testQueue.enqueue(['ola ola', 3]);
 testQueue.enqueue(['teju teju', 2]);
 testQueue.enqueue(['ope ope', 1]);
+testQueue.printCollection();
+testQueue.dequeue();
+testQueue.front();
 testQueue.printCollection();
