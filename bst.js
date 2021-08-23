@@ -126,6 +126,18 @@ class BST{
         }
         this.root = removeNode(this.root, data);
     }
+   findMinHeight(node = this.root){
+        if(node == null){
+            return -1;
+        };
+        let left = this.findMinHeight(node.left);
+        let right = this.findMinHeight(node.right);
+        if(left < right){
+            return left + 1;
+        } else {
+            return right + 1;
+        };
+   }
 }
 //Min height is the distance from the root node to the first leave node without two children
 //Max height is the distance from the root node to the last node on the tree
