@@ -129,6 +129,7 @@ class BST{
 }
 //Min height is the distance from the root node to the first leave node without two children
 //Max height is the distance from the root node to the last node on the tree
+//test the code
 const bst = new BST();
 bst.add(6);
 bst.add(5);
