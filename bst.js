@@ -157,7 +157,7 @@ class BST{
         if(this.root == null){
             return null;
         } else{
-            let result = new Array();
+            var result = new Array();
             function traverseInOrder(node){
                 node.left && traverseInOrder(node.left);
                 result.push(node.data);
@@ -171,7 +171,7 @@ class BST{
         if(this.root == null){
             return null;
         } else{
-            let result = new Array();
+            var result = new Array();
             function traversePreOrder(node){
                 result.push(node.data);
                 node.left && traversePreOrder(node.left);
@@ -185,7 +185,7 @@ class BST{
         if(this.root == null){
             return null;
         } else{
-            let result = new Array();
+            var result = new Array();
             function traversePostOrder(node){
                 node.left && traversePostOrder(node.left);
                 node.right && traversePostOrder(node.right);
@@ -195,6 +195,27 @@ class BST{
             return result;
         }
     }
+
+    levelOrder(){
+        let result = [];
+        let Q = [];
+        if(this.root != null){
+            Q.push(this.root);
+            while(Q.length >0){
+                let node = Q.shift();
+                result.push(node.data);
+                if(node.left != null){
+                    Q.push(node.left);
+                };
+                if(node.right != null){
+                    Q.push(node.right);
+                };
+            };
+            return result;
+        } else{
+            return null;
+        };
+    };
 
 
 }
