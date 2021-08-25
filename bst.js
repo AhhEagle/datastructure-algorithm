@@ -181,6 +181,21 @@ class BST{
             return result;
         }
     }
+    postOrder(){
+        if(this.root == null){
+            return null;
+        } else{
+            let result = new Array();
+            function traversePostOrder(node){
+                node.left && traversePostOrder(node.left);
+                node.right && traversePostOrder(node.right);
+                result.push(node.data);
+            };
+            traversePostOrder(this.root);
+            return result;
+        }
+    }
+
 
 }
 //Min height is the distance from the root node to the first leave node without two children
