@@ -6,3 +6,11 @@ var hash = (string, max) => {
     return hash % max;
 };
 
+let HashTable = function (){
+    let storage = [];
+
+    this.print = function(){
+        console.log(storage)
+    }
+}
+
