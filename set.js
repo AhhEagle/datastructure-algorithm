@@ -60,5 +60,7 @@ setTwo.add("b");
 setTwo.add("c");
 setTwo.add("a");
 setTwo.add("d");
-console.log(setOne.subset(setTwo));
-console.log(setOne.intersection(setTwo).values());
+//console.log(setOne.subset(setTwo));
+//console.log(setOne.intersection(setTwo).values());
+
+

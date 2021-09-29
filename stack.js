@@ -16,5 +16,39 @@ if (reversed == str){
  
 }
 }
+//console.log(palin('dimeji'))
+//Balanced Expressions
+//edge cases: 
+//( , ((), (], )(
 
-console.log(palin('dimeji'))
+function balancedExpression(input){
+    let brackets=[]
+    for(let i = 0; i<input.length; i++){
+        if(isleft(input, i)){
+            brackets.push(input[i])
+        }
+
+        if(isRight(input, i)){
+            if(brackets.length == 0){
+                return false
+            }
+          var res =  brackets.pop();
+          if(compare(input, i, res)){
+            return false;
+          }
+          }
+        }
+    let result = (brackets.length == 0) ? true : false
+    return result;
+
+}
+function isleft(input, i){
+    return input[i] == "(" || input[i] == '<' || input[i] == '[' || input[i] == '{'
+}
+function isRight(input, i){
+    return input[i] == ")"|| input[i] == '>' || input[i] == ']' || input[i] ==  '}'
+}
+function compare(input, i, res){
+    return (input[i] == ')' && res != '(') || (input[i] == '<' && res != '>' ) || (input[i] == ']' && res != '[') || (input[i] == '}' && res != '{')
+}
+console.log(balancedExpression("[(1+2]"))
