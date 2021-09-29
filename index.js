@@ -246,4 +246,84 @@ function getPermutation(string, prefix=''){
         else console.log(i);
     }
   }
-  console.log(fizzbuzz2());
+  //console.log(fizzbuzz2());
+  var s = new Set();
+  s.add('a');
+  s.add('b');
+  s.add('b');
+  s.add('1000');
+  var o = {1: '1st', 2: '2nd'};
+  s.add(o);
+  s.add({1: '1st', 2: '2nd'});
+  //console.log(s)
+  let c = ["a","b","c"];
+  //console.log(c.splice(1));
+function Cars(car, color){
+    var car = car;
+    var color =  color;
+    this.carInfo = function(){
+        return car + " " + color 
+    }
+}
+var MyCar= new Array();
+MyCar[0] = new Cars("Mustang", "Red");
+try{
+    //console.log(MyCar[0].car + " " + MyCar[0].color);
+} catch (e){
+    //console.log(e);
+}
+class Server{
+    constructor(item){
+        this._list = new WeakMap(item)
+    }
+    set(var1, var2){
+        this._list.set(var1, var2);
+        return this._list;
+    }
+}
+const ip = '111.11.11.11';
+var svr = {name: "vip-server"};
+var svrInfo = [[svr,ip]];
+var svr = new Server(svrInfo);
+console.log(svr)
+function * maths(value){
+    let b = 2;
+    yield value + b;
+    b = 4;
+    yield value - ++b;
+    b = 8;
+    yield value * b++;
+    yield value / b;
+}
+const calcSums = maths(5);
+console.log(calcSums.next().value);
+console.log(calcSums.next().value);
+console.log(calcSums.next().value);
+console.log(calcSums.next().value);
+
+var student = new Object({type: "student"});
+function setvals(s){
+    s.name = "John";
+    s.age = 15;
+    s.id = 100;
+}
+//console.log(setvals(student));
+someText = 'JavaScript1.2';
+pattern = /(\w+)(\d)\.(\d)/i;
+outcome = pattern.test(someText);
+//console.log(outcome)
+
+var person = name => first + ' ' + last;
+//console.log(new person ('jane', 'smith'));
+var numbers =[1,2,3,4,5,6,7,8];
+var letters = ['a','b','c','d','e','f','g','h']
+var myArray = [numbers,letters,numbers,letters,numbers,letters,numbers,letters]
+for(var i = 0, j = 7; i <=j; i++, --j){
+    //console.log('myArray[' + i + ']['+ j + ']= ' + myArray[i][j])
+}
+var a = "test";
+var b = String("test");
+var d =  new String ("test");
+//console.log( a === d)
+let z = ((24 / 3 + 12) / 4) - 7;
+console.log(z)
