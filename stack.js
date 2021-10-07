@@ -49,6 +49,6 @@ function isRight(input, i){
     return input[i] == ")"|| input[i] == '>' || input[i] == ']' || input[i] ==  '}'
 }
 function compare(input, i, res){
-    return (input[i] == ')' && res != '(') || (input[i] == '<' && res != '>' ) || (input[i] == ']' && res != '[') || (input[i] == '}' && res != '{')
+    return (input[i] == ')' && res != '(') || (input[i] == '>' && res != '<' ) || (input[i] == ']' && res != '[') || (input[i] == '}' && res != '{')
 }
 console.log(balancedExpression("[(1+2]"))
