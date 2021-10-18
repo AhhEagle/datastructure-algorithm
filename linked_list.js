@@ -60,6 +60,24 @@ class SingleLinked{
             this.head = first;
         }
     }
+    removeLast(){
+         if(this.head == null){
+            return;
+        }
+        this.size --
+        if(this.head == this.tail){
+            return null;
+        } else{
+           let current = this.head
+            let prev;
+        while(current.next != null){
+             prev = current;
+             current =  current.next
+           }
+           prev.next = null;
+           this.tail = prev
+        }
+    }
 
     returnSize(){
         return this.size;
@@ -86,6 +104,7 @@ ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
 ll_linked.removeFirst();
+ll_linked.removeLast();
 console.log(ll_linked.returnSize());
 console.log(ll_linked.contains(0));
 console.log(ll_linked.toArray());
