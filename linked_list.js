@@ -65,6 +65,18 @@ class SingleLinked{
         return this.size;
     }
 
+    toArray(){
+        let newArray = [];
+        let current = this.head;
+        let index = 0;
+        while(current != null){
+            newArray[index] = current.data;
+            index++;
+            current = current.next;
+        }
+        return newArray;
+    }
+
 }
 
 const ll_linked = new SingleLinked();
@@ -72,9 +84,10 @@ ll_linked.addLast(3);
 ll_linked.addLast(4);
 ll_linked.addLast(6)
 ll_linked.addLast(5);
-ll_linked.addFirst(1)
+ll_linked.addFirst(1);
 ll_linked.removeFirst();
 console.log(ll_linked.returnSize());
 console.log(ll_linked.contains(0));
+console.log(ll_linked.toArray());
 console.log(ll_linked)
 
