@@ -7,8 +7,8 @@ class Node {
 
 class SingleLinked{
    constructor(){
-        this.head ;
-        this.tail ;
+        this.head;
+        this.tail;
    }
 
     addLast(data){
@@ -44,6 +44,21 @@ class SingleLinked{
     contains(data){
         return this.indexOf(data) != -1;
     }
+    removeFirst(){
+        if(this.head == null){
+            return;
+        }
+
+        if(this.head == this.tail){
+            return null;
+        } else{
+            let first =  this.head.next;
+            this.head.next = null;
+            this.head = first;
+        }
+
+
+    }
 
 }
 
@@ -53,6 +68,7 @@ ll_linked.addLast(4);
 ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1)
+ll_linked.removeFirst();
 console.log(ll_linked.contains(0));
 console.log(ll_linked)
 
