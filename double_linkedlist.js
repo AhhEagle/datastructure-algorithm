@@ -24,6 +24,18 @@ class DoubleLinked{
 
        this.size++;
    }
+     addLast(data){
+       let node = new Node(data);
+       if(this.head == null){
+           this.head = this.tail = node;
+       } else{
+          this.tail.next = node;
+          node.prev = this.tail;
+          this.tail = node;
+       }
+
+       this.size++;
+   }
 }
 
 const double =  new DoubleLinked()
@@ -31,5 +43,7 @@ double.addFirst(5);
 double.addFirst(4);
 double.addFirst(3);
 double.addFirst(2);
+double.addLast(6);
+double.addLast(7);
 console.log(double);
 
