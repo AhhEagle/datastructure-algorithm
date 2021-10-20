@@ -36,6 +36,19 @@ class DoubleLinked{
 
        this.size++;
    }
+
+   indexOf(data){
+       let index = 0;
+       let current = this.head;
+       while(current != null){
+           if(current.data == data){ 
+               return index;
+           }
+           current = current.next;
+           index++;
+       }
+       return -1;
+   }
 }
 
 const double =  new DoubleLinked()
@@ -45,5 +58,6 @@ double.addFirst(3);
 double.addFirst(2);
 double.addLast(6);
 double.addLast(7);
+console.log(double.indexOf(2));
 console.log(double);
 
