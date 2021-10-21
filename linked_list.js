@@ -95,6 +95,22 @@ class SingleLinked{
         return newArray;
     }
 
+    getKthFromTheEnd(k){
+        let a = this.head;
+        let b = this.head;
+        for(let i = 0; i < k-1; i++){
+            b = b.next;
+            if(b == null){
+                return "error";
+            }
+        }
+        while (b != this.tail){
+            a = a.next;
+            b = b.next;
+        }
+        return a.data
+    }
+
 }
 
 const ll_linked = new SingleLinked();
@@ -105,6 +121,7 @@ ll_linked.addLast(5);
 ll_linked.addFirst(1);
 ll_linked.removeFirst();
 ll_linked.removeLast();
+console.log(ll_linked.getKthFromTheEnd(1));
 console.log(ll_linked.returnSize());
 console.log(ll_linked.contains(0));
 console.log(ll_linked.toArray());
