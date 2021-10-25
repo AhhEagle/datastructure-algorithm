@@ -4,3 +4,9 @@ class Entry{
         this.value = value;
     }
 }
+
+class HashMethod{
+    hash(){
+        return 
+    }
+}

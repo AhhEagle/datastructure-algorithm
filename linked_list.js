@@ -113,6 +113,8 @@ class SingleLinked{
 
 }
 
+export SingleLinked;
+
 const ll_linked = new SingleLinked();
 ll_linked.addLast(3);
 ll_linked.addLast(4);
