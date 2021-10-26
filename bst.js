@@ -22,7 +22,6 @@ class BST{
             this.root = node;
             return;
         }
-
         let current = this.root;
         while(true){
             if(data < current.data){
@@ -98,6 +97,7 @@ class BST{
         }
         return current;
     }
+
     isPresent(data){
         let current = this.root;
         while(current){
