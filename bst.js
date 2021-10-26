@@ -17,8 +17,27 @@ class BST{
         this.root = null;
     }
     insert(data){
+        let node = new Node(data)
         if(this.root ==null){
-            this.root = new Node(data);
+            this.root = node;
+            return;
+        }
+
+        let current = this.root;
+        while(true){
+            if(data < current.data){
+                if(current.left == null){
+                    current.left =  node;
+                    break;
+                }
+                current = current.left;
+            } else{
+                if(current.right == null){
+                    current.right = node;
+                    break;
+                }
+                current = current.right
+            }
         }
     }
     add(data){
