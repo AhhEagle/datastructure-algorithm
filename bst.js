@@ -192,6 +192,10 @@ class BST{
             return result;
         }
     }
+
+ 
+
+
     preOrder(){
         if(this.root == null){
             return null;
@@ -206,6 +210,8 @@ class BST{
             return result;
         }
     }
+    
+
     postOrder(){
         if(this.root == null){
             return null;
@@ -220,6 +226,7 @@ class BST{
             return result;
         }
     }
+
 
     levelOrder(){
         let result = [];
@@ -255,6 +262,8 @@ bst.add(1);
 bst.add(4);
 bst.add(7)
 bst.remove(4);
-console.log(bst.findMin());
-console.log(bst.findMax());
-console.log(bst.isPresent(4));
+console.log(bst);
+console.log(bst.inOrder())
+//console.log(bst.findMin());
+//console.log(bst.findMax());
+//console.log(bst.isPresent(4));
