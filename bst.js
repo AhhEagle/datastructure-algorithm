@@ -41,21 +41,22 @@ class BST{
     }
     add(data){
         const node = this.root;
+        const new_node = new Node(data)
         if(node == null){
-            this.root = new Node(data);
+            this.root = new_node;
             return;
         } else{
             const searchTree = (node) =>{
                 if(data < node.data){
                     if(node.left === null){
-                        node.left = new Node(data);
+                        node.left = new_node;
                         return;
                     } else if(node.left !==null){
                         return searchTree(node.left);
                     }
                 } else if (data > node.data){
                     if(node.right === null){
-                        node.right = new Node(data);
+                        node.right = new_node;
                         return;
                     } else if (node.right !== null){
                         return searchTree(node.right);
