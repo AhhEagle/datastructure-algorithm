@@ -179,11 +179,12 @@ class BST{
     };
 }
     inOrder(){
-        if(this.root == null){
+        if(this.root == null){ 
             return null;
         } else{
             var result = new Array();
             function traverseInOrder(node){
+                //console.log(node.left)
                 node.left && traverseInOrder(node.left);
                 result.push(node.data);
                 node.right && traverseInOrder(node.right);
@@ -194,8 +195,6 @@ class BST{
     }
 
  
-
-
     preOrder(){
         if(this.root == null){
             return null;
