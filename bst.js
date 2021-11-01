@@ -223,7 +223,12 @@ class BST{
         };
     };
 
-
+   height(node = this.root){
+       if(node == null){
+           return 0;
+       }
+       return 1 + Math.max(this.height(node.left), this.height(node.right));
+   }
      
    findMinHeight(node = this.root){
         if(node == null){
@@ -268,8 +273,9 @@ bst.add(1);
 bst.add(4);
 bst.add(7)
 bst.remove(4);
-console.log(bst);
-console.log(bst.inOrder())
+console.log(bst.height());
+//console.log(bst);
+//console.log(bst.inOrder())
 //console.log(bst.findMin());
 //console.log(bst.findMax());
 //console.log(bst.isPresent(4));
