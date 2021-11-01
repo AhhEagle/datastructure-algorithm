@@ -117,6 +117,9 @@ class SingleLinked{
     }
 
     getKthFromTheEnd(k){
+        if(this.isEmpty()){
+            return;
+        }
         let a = this.head;
         let b = this.head;
         for(let i = 0; i < k-1; i++){
