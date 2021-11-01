@@ -14,7 +14,7 @@ class SingleLinked{
 
     addLast(data){
      let node =  new Node (data);
-     if(this.head == null){
+     if(this.isEmpty()){
          this.head = this.tail = node;
      } else {
          this.tail.next = node;
@@ -25,7 +25,7 @@ class SingleLinked{
 
     addFirst(data){
         let node =  new Node (data);
-     if(this.head == null){
+     if(this.isEmpty()){
          this.head = this.tail = node;
      } else {
          node.next =  this.head;
@@ -48,7 +48,7 @@ class SingleLinked{
         return this.indexOf(data) != -1;
     }
     removeFirst(){
-        if(this.head == null){
+        if(this.isEmpty()){
             return;
         }
         this.size--;
@@ -61,7 +61,7 @@ class SingleLinked{
         }
     }
     removeLast(){
-         if(this.head == null){
+         if(this.isEmpty()){
             return;
         }
         this.size --
@@ -93,6 +93,9 @@ class SingleLinked{
             current = current.next;
         }
         return newArray;
+    }
+    isEmpty(){
+        return this.head == null;
     }
 
     getKthFromTheEnd(k){
