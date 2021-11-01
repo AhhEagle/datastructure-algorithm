@@ -98,6 +98,24 @@ class SingleLinked{
         return this.head == null;
     }
 
+    reverse(){
+        if(this.isEmpty()){
+            return;
+        }
+        let previous = this.head;
+        let current = this.head.next;
+       while(current != null){
+            let next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next
+        }
+
+        this.tail = this.head;
+        this.tail.next = null;
+        this.head = previous;
+    }
+
     getKthFromTheEnd(k){
         let a = this.head;
         let b = this.head;
@@ -122,6 +140,7 @@ ll_linked.addLast(4);
 ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
+//ll_linked.reverse();
 ll_linked.removeFirst();
 ll_linked.removeLast();
 console.log(ll_linked.getKthFromTheEnd(1));
