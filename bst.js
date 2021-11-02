@@ -69,6 +69,7 @@ class BST{
         }
     }
 
+//O(log n)
     findMin(){
         let current = this.root;
         while(current.left !== null){
@@ -76,6 +77,7 @@ class BST{
         }
         return current.data
     }
+//O(log n)
     findMax(){
         let current = this.root;
         while(current.right !== null){
@@ -83,6 +85,7 @@ class BST{
         }
         return current.data;
     }
+    // O(n)
     find(data){
         let current = this.root;
         while(current.data !== data){
@@ -260,6 +263,15 @@ isBalanced(){
         return(this.findMinHeight() >= this.findMaxHeight() - 1);
     }
 
+compare(node =this.root, node2 =this.root){
+    if(node == null && node2 == null){
+        return true;
+    }
+    if(node != null && node2 != null){
+         
+    } 
+}
+
 
 }
 //Min height is the distance from the root node to the first leave node without two children
@@ -273,7 +285,8 @@ bst.add(1);
 bst.add(4);
 bst.add(7)
 bst.remove(4);
-console.log(bst.height());
+//console.log(bst.height());
+console.log(bst.inOrder());
 //console.log(bst);
 //console.log(bst.inOrder())
 //console.log(bst.findMin());
