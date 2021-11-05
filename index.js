@@ -43,7 +43,7 @@ function duplicate(n){
     }
     return dupValue;
 }
-//console.log(duplicate([1,3,3,6]));
+console.log(duplicate([1,3,3,6]));
 
 //Better written has:
 function betterDuplicate(n){
@@ -296,10 +296,10 @@ function * maths(value){
     yield value / b;
 }
 const calcSums = maths(5);
-console.log(calcSums.next().value);
-console.log(calcSums.next().value);
-console.log(calcSums.next().value);
-console.log(calcSums.next().value);
+//console.log(calcSums.next().value);
+//console.log(calcSums.next().value);
+//console.log(calcSums.next().value);
+//console.log(calcSums.next().value);
 
 var student = new Object({type: "student"});
 function setvals(s){
@@ -326,4 +326,4 @@ var b = String("test");
 var d =  new String ("test");
 //console.log( a === d)
 let z = ((24 / 3 + 12) / 4) - 7;
-console.log(z)
+//console.log(z)
