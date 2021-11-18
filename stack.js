@@ -91,11 +91,4 @@ var decodeString = function(s) {
     return res;
 };
 //console.log(decodeString("3[a]"))
-function test(x){
-    let testarray = [];
-   let c = testarray.push({value:x, min: Math.min(x, 10)})
-   console.log(testarray);
-   return c;
-}
 
-console.log(test(3));
