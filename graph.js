@@ -7,13 +7,12 @@ class Node {
 class graph{
     constructor(){
          this.nodes = {};
-         this.adjacency = {};
-         this.list = [];
+         this.adjacencyList = {};
     }
     add(label){
         let node =  new Node(label)
         this.nodes[label] = node;
-        this.adjacency[node] = this.list;
+        this.adjacencyList[node] =  [];
     }
 
     addEdge(from, to){
@@ -25,7 +24,25 @@ class graph{
         if(toNode == null){
             throw new Error("IllegalArgument");
         }
-    this.adjacency[fromNode] = this.list.push(toNode);
+    this.adjacencyList[fromNode].push(toNode);
+    }
+    print(){
+        for(let x in Object.keys(this.adjacencyList)){
+            var targets = this.adjacencyList[x];
+            if(targets != null){
+                console.log(x + " is connected to " + targets)
+            }
+        }
+
     }
 
 }
+const graphtest =  new graph();
+graphtest.add("A");
+graphtest.add("B");
+graphtest.add("C");
+graphtest.addEdge("A", "B");
+graphtest.addEdge("A", "C");
+graphtest.addEdge("B", "C")
+graphtest.print();
+console.log(graphtest);
