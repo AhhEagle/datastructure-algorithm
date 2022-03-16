@@ -124,6 +124,7 @@ class SingleLinked{
         let b = this.head;
         for(let i = 0; i < k-1; i++){
             b = b.next;
+            console.log(b)
             if(b == null){
                 return "error";
             }
@@ -144,11 +145,11 @@ ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
 //ll_linked.reverse();
-ll_linked.removeFirst();
-ll_linked.removeLast();
-console.log(ll_linked.getKthFromTheEnd(1));
-console.log(ll_linked.returnSize());
-console.log(ll_linked.contains(0));
-console.log(ll_linked.toArray());
-console.log(ll_linked)
+//ll_linked.removeFirst();
+//ll_linked.removeLast();
+console.log(ll_linked.getKthFromTheEnd(3));
+//console.log(ll_linked.returnSize());
+//console.log(ll_linked.contains(0));
+//console.log(ll_linked.toArray());
+//console.log(ll_linked)
 

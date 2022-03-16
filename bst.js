@@ -43,7 +43,7 @@ class BST{
         const node = this.root;
         const new_node = new Node(data)
         if(node == null){
-            this.root = new_node;
+           node = new_node;
             return;
         } else{
             const searchTree = (node) =>{
