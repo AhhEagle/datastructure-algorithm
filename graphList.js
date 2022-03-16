@@ -37,6 +37,32 @@ class Graph{
         }
     }
 
+    removeNode(label){
+        const toRemove = this.nodes.get(label);
+        if(toRemove){
+            for( const node of this.nodes.values()){
+                node.removeAdjancent(toRemove);
+            }
+        }
+
+        return this.nodes.delete(label);
+    }
+
+    addEdge(from, to){
+        const fromNode = this.addNode(from);
+        const toNode = this.addNode(to)
+       return fromNode.addAdjancent(toNode);  
+    }
+
+    removeEdge(from, to){
+        const fromNode = this.nodes.get(from);
+        const toNode = this.nodes.get(to);
+        if (fromNode && toNode){
+            return fromNode.removeAdjacent(toNode)
+        }
+
+        return;
+    }
     
 }
 
