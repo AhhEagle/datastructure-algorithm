@@ -64,6 +64,22 @@ class Graph{
         return;
     }
     
+    breadthSearch(firstNode){
+        const visited = new Map();
+        const visitedList = new Queue();
+
+        visitedList.add(firstNode);
+        
+        while(!visitedList.isEmpty()) {
+            const node = visitedList.remove();
+            if(node && !visited.has(node)) {
+              yield node;
+              visited.set(node);
+              node.getAdjacents().forEach(adj => visitList.add(adj));
+            }
+          }
+    }
+    
 }
 
 //const test = new Node(10);
