@@ -64,7 +64,7 @@ class Graph{
         return;
     }
     
-    breadthSearch(firstNode){
+    *breadthSearch(firstNode){
         const visited = new Map();
         const visitedList = new Queue();
 
@@ -75,10 +75,26 @@ class Graph{
             if(node && !visited.has(node)) {
               yield node;
               visited.set(node);
-              node.getAdjacents().forEach(adj => visitList.add(adj));
+              node.getAdjacents().forEach(adj => visitedList.add(adj));
             }
           }
     }
+
+    *depthSearch(firstNode) {
+        const visited = new Map();
+        const visitedList = new Stack();
+      
+        visitedList.add(firstNode);
+      
+        while(!visitedList.isEmpty()) {
+          const node = visitedList.remove();
+          if(node && !visited.has(node)) {
+            yield node;
+            visited.set(node);
+            node.getAdjacents().forEach(adj => visitedList.add(adj));
+          }
+        }
+      }
     
 }
 
