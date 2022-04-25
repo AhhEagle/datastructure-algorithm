@@ -102,17 +102,17 @@ class SingleLinked{
         if(this.isEmpty()){
             return;
         }
-        let previous = this.head;
         let current = this.head.next;
+        let previous = this.head;
+        previous.next = null;
+        this.tail = previous;
        while(current != null){
-            let next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next
+           let newCurrent = current;
+           current = current.next;
+           newCurrent.next = previous;
+           previous = newCurrent;
         }
 
-        this.tail = this.head;
-        this.tail.next = null;
         this.head = previous;
     }
 
@@ -144,10 +144,11 @@ ll_linked.addLast(4);
 ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
-//ll_linked.reverse();
+console.log(ll_linked);
+console.log(ll_linked.reverse());
 //ll_linked.removeFirst();
 //ll_linked.removeLast();
-console.log(ll_linked.getKthFromTheEnd(3));
+//console.log(ll_linked.getKthFromTheEnd(3));
 //console.log(ll_linked.returnSize());
 //console.log(ll_linked.contains(0));
 //console.log(ll_linked.toArray());
