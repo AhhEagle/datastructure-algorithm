@@ -135,6 +135,24 @@ class SingleLinked{
         }
         return a.data
     }
+    deleteKeyOccur(k){
+        let current = this.head;
+        let prev = null;
+        while(current){
+            if (current.data == k){
+                if(current === this.head){
+                    this.head = this.head.next;
+                    current = this.head
+                } else {
+                    prev.next = current.next;
+                    current = current.next;
+                }
+            } else{
+                prev = current;
+                current = current.next;
+            }
+        }
+    }
 
 }
 
@@ -144,8 +162,9 @@ ll_linked.addLast(4);
 ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
-console.log(ll_linked);
-console.log(ll_linked.reverse());
+//console.log(ll_linked);
+//console.log(ll_linked.reverse());
+//console.log(ll_linked.deleteKeyOccur(1));
 //ll_linked.removeFirst();
 //ll_linked.removeLast();
 //console.log(ll_linked.getKthFromTheEnd(3));
