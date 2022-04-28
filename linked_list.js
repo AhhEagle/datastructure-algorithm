@@ -157,7 +157,11 @@ class SingleLinked{
     removeDuplicate(){
         let dup = new Set();
         let current =  this.head;
-        dup.add(current.data);
+        if(!this.head){
+            return
+        } else {
+            dup.add(current.data);
+        }
         while (current.next){
             if(dup.has(current.next.data)){
                 current.next = current.next.next;
