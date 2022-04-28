@@ -171,6 +171,50 @@ class SingleLinked{
             }
         }
     }
+    sortList() {
+        let sorted = null;
+        let current = this.head;
+        while (current){
+            let temp = current.next;
+            sorted = this.sortedList(sorted, current);
+            current = temp
+        }
+        console.log(sorted);
+           return sorted;
+    };
+    
+    sortedList(head, node){
+        if(!node){
+            return head;
+        }
+        
+        if(!head || node.val <= head.val){
+            node.next = head;
+            return node;
+        }
+     let curr = head;
+        while (curr.next && curr.next.val < node.val){
+            curr = curr.next;
+        }
+        
+        node.next = curr.next;
+        curr.next = node;
+        return head
+    }
+
+    hasCycle(){
+        let fast = this.head, slow = this.head;
+        while(fast !== null && fast.next !== null){
+            fast= fast.next.next;
+            slow = slow.next;
+            if(slow === fast){
+                return true
+            }
+        }
+        return false;
+    }
+
+    
 
 
 }
@@ -181,7 +225,7 @@ ll_linked.addLast(4);
 ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
-ll_linked.addFirst(1)
+ll_linked.addFirst(1);
 //console.log(ll_linked.reverse());
 //console.log(ll_linked.deleteKeyOccur(1));
 //ll_linked.removeFirst();
