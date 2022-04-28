@@ -153,7 +153,21 @@ class SingleLinked{
             }
         }
     }
-    
+
+    removeDuplicate(){
+        let dup = new Set();
+        let current =  this.head;
+        dup.add(current.data);
+        while (current.next){
+            if(dup.has(current.next.data)){
+                current.next = current.next.next;
+            } else{
+                dup.add(current.next.data);
+                current = current.next;
+            }
+        }
+    }
+
 
 }
 
@@ -163,7 +177,7 @@ ll_linked.addLast(4);
 ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
-//console.log(ll_linked);
+ll_linked.addFirst(1)
 //console.log(ll_linked.reverse());
 //console.log(ll_linked.deleteKeyOccur(1));
 //ll_linked.removeFirst();
@@ -172,5 +186,5 @@ ll_linked.addFirst(1);
 //console.log(ll_linked.returnSize());
 //console.log(ll_linked.contains(0));
 //console.log(ll_linked.toArray());
-//console.log(ll_linked)
+
 
