@@ -187,16 +187,14 @@ class SingleLinked{
         if(!node){
             return head;
         }
-        
         if(!head || node.val <= head.val){
             node.next = head;
             return node;
         }
-     let curr = head;
+        let curr = head;
         while (curr.next && curr.next.val < node.val){
             curr = curr.next;
         }
-        
         node.next = curr.next;
         curr.next = node;
         return head
