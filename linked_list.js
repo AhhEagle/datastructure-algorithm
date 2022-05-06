@@ -33,6 +33,25 @@ class SingleLinked{
     }
      this.size++;
 }
+    insertAfter(data, nodeAfter){
+     let current = this.head;
+     while (current){
+        if(current.data === nodeAfter){
+            let node =  new Node (data)
+            if(current === this.tail){
+               this.tail.next = node;
+               this.tail = node;
+            } else {
+                node.next = current.next
+                current.next = node;
+                break;
+            }
+            this.size++;
+        }
+        current = current.next
+     }
+    }
+
     indexOf(data){
         let index = 0;
         let current = this.head;
@@ -224,6 +243,8 @@ class SingleLinked{
         return cycleLength;
       }
 
+      
+
     
 
 
@@ -236,7 +257,8 @@ ll_linked.addLast(6)
 ll_linked.addLast(5);
 ll_linked.addFirst(1);
 ll_linked.addFirst(1);
-//console.log(ll_linked.reverse());
+ll_linked.insertAfter(8, 5);
+console.log(ll_linked);
 //console.log(ll_linked.deleteKeyOccur(1));
 //ll_linked.removeFirst();
 //ll_linked.removeLast();
