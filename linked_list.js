@@ -206,11 +206,23 @@ class SingleLinked{
             fast= fast.next.next;
             slow = slow.next;
             if(slow === fast){
-                return true
+                return this.calculate_cycle_length(slow)
             }
         }
-        return false;
+        return 0;
     }
+     calculate_cycle_length(slow) {
+        let current = slow,
+          cycleLength = 0;
+        while (true) {
+          current = current.next;
+          cycleLength += 1;
+          if (current === slow) {
+            break;
+          }
+        }
+        return cycleLength;
+      }
 
     
 
