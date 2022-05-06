@@ -45,8 +45,8 @@ class DoubleLinked{
         if (current === this.tail) {
           this.addLast(data);
         } else {
-          current.next.previous = node;
-          node.previous = current; 
+          current.next.prev = node;
+          node.prev = current; 
           node.next = current.next;
           current.next = node;
           this.size++;
@@ -68,6 +68,28 @@ class DoubleLinked{
        }
        return -1;
    }
+
+   removeNode(data) {
+    let current = this.head;
+    while (current) {
+      if (current.data === data) {
+        if (current === this.head && current === this.tail) {
+          this.head = this.tail = null;
+        } else if (current === this.head) {
+          this.head = this.head.next;
+          this.head.prev = null;
+        } else if (current === this.tail) {
+          this.tail = this.tail.prev;
+          this.tail.next = null;
+        } else {
+          current.prev.next = current.next;
+          current.next.prev = current.prev;
+        }
+        this.size--
+      }
+      current = current.next;
+    }
+  }
 }
 
 const double =  new DoubleLinked()

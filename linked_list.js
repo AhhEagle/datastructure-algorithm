@@ -159,6 +159,7 @@ class SingleLinked{
         let prev = null;
         while(current){
             if (current.data == k){
+                this.size--;
                 if(current === this.head){
                     this.head = this.head.next;
                     current = this.head
@@ -183,6 +184,7 @@ class SingleLinked{
         }
         while (current.next){
             if(dup.has(current.next.data)){
+                this.size--;
                 current.next = current.next.next;
             } else{
                 dup.add(current.next.data);
