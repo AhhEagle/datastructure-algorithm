@@ -208,12 +208,12 @@ class SingleLinked{
         if(!node){
             return head;
         }
-        if(!head || node.val <= head.val){
+        if(!head || node.data <= head.data){
             node.next = head;
             return node;
         }
         let curr = head;
-        while (curr.next && curr.next.val < node.val){
+        while (curr.next && curr.next.data < node.data){
             curr = curr.next;
         }
         node.next = curr.next;
@@ -221,7 +221,7 @@ class SingleLinked{
         return head
     }
 
-    hasCycle(linkedlist){
+    hasCycle(){
         let cycle_length = 0;
         let fast = this.head, slow = this.head;
         while(fast !== null && fast.next !== null){
@@ -232,7 +232,7 @@ class SingleLinked{
              break;
             }
         }
-        return this.find_cycle_start(linkedlist, cycle_length);
+        return this.find_cycle_start(this.head, cycle_length);
     }
      calculate_cycle_length(slow) {
         let current = slow,
@@ -264,9 +264,16 @@ class SingleLinked{
         return pointer1;
       }
 
-      
-
-    
+      decimalValue(){
+        let res = 0;
+        let current = this.head;
+        while(current){
+       // convert from base to 2 to decimal
+         res = res *2 + current.data
+         current = current.next
+        }
+         return res;
+    }
 
 
 }
