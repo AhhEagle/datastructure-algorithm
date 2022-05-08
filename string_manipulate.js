@@ -10,4 +10,15 @@ function countVowels(str){
 
 }
 
-console.log(countVowels("pringles"));
+function reverseStr(str){
+    if(str == null || str == undefined){
+        return "";
+    }
+    let reversed = "";
+    for (let i = str.length -1; i>=0; i--){
+        reversed += str[i];
+    }
+    return reversed;
+}
+
+
