@@ -37,6 +37,11 @@ function anotherReverse(str){
     return newWord.reverse().join(" ");
 }
 
+function areRotations(str1, str2){
+    console.log(str1+str1)
+    return (str1.length == str2.length && (str1+str1).includes(str2))
+}
 
+console.log(areRotations("ABCD", "DABC"))
 
 
