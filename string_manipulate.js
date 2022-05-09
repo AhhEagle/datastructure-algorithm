@@ -84,10 +84,12 @@ function mostRepeated(str){
 }
 
 function capitalizeFirst(sentence){
-const words = sentence.split(" ");
+    //@replace handles instances where we have more than one space in a sentence
+const words = sentence.trim().replace(/\s+/g, " ").split(" ");
 return words.map((word) => { 
     return word[0].toUpperCase() + word.substring(1); 
 }).join(" ");
 }
 
+console.log(capitalizeFirst("    dimeji   is my name  "))
 
