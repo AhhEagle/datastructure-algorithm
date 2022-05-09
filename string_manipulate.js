@@ -43,6 +43,9 @@ function areRotations(str1, str2){
 }
 
 function removeDup(str){
+    if(str == null || str == undefined){
+        return "";
+    }
    let newStr = "";
    let check = {};
    for(let i =0; i<str.length; i++){
@@ -57,6 +60,28 @@ function removeDup(str){
    return newStr;
 }
 
-console.log(removeDup("diimeji is a boy"))
+function mostRepeated(str){
+    if(str == null || str == undefined || str == ""){
+        return "";
+    }
+    let check = {};
+    for(let i = 0; i<str.length; i++){
+        if(str[i] in check){
+            check[str[i]] += 1 
+        } else {
+            check[str[i]] = 1
+        }
+    }
+    let max = 0;
+    let maxChar = null;
+    for(let ele in check){
+        if(check[ele] > max){
+            max = check[ele];
+            maxChar = ele
+        }
+    }
+    return maxChar;
+}
 
+console.log(mostRepeated(""))
 
