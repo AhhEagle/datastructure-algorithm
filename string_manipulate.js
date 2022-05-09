@@ -42,6 +42,21 @@ function areRotations(str1, str2){
     return (str1.length == str2.length && (str1+str1).includes(str2))
 }
 
-console.log(areRotations("ABCD", "DABC"))
+function removeDup(str){
+   let newStr = "";
+   let check = {};
+   for(let i =0; i<str.length; i++){
+       if(str[i] in check){
+          continue;
+       } else{
+        check[str[i]] = 1;
+       newStr += str[i];
+       }
+       
+   }
+   return newStr;
+}
+
+console.log(removeDup("diimeji is a boy"))
 
 
