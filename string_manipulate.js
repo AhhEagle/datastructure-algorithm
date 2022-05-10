@@ -92,9 +92,15 @@ return words.map((word) => {
 }
 
 function areAnagrams(str1, str2){
+    if(str1 == null || str1 == undefined || str2 == null || str2 == undefined ){
+        return false;
+    }
+    if(!firstString.length == secondString.length){
+        return false
+    }
     let firstString = str1.split("").sort();
     let secondString = str2.split("").sort();
-    return (firstString.length == secondString.length && !!firstString && !!secondString && !(firstString<secondString || secondString<firstString));
+    return (!!firstString && !!secondString && !(firstString<secondString || secondString<firstString));
 }
 
-console.log(areAnagrams("ABCD", "CBDA"));
+
