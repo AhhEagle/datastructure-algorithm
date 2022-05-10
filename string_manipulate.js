@@ -91,5 +91,10 @@ return words.map((word) => {
 }).join(" ");
 }
 
-console.log(capitalizeFirst("    dimeji   is my name  "))
+function areAnagrams(str1, str2){
+    let firstString = str1.split("").sort();
+    let secondString = str2.split("").sort();
+    return (firstString.length == secondString.length && !!firstString && !!secondString && !(firstString<secondString || secondString<firstString));
+}
 
+console.log(areAnagrams("ABCD", "CBDA"));
