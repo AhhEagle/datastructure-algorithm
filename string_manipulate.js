@@ -1,4 +1,7 @@
 function countVowels(str){
+    if(str == null || str == undefined){
+        return "";
+    }
         let count = 0;
         let vowels = "aeiou"
         for(let i = 0; i<str.length; i++){
@@ -38,7 +41,6 @@ function anotherReverse(str){
 }
 
 function areRotations(str1, str2){
-    console.log(str1+str1)
     return (str1.length == str2.length && (str1+str1).includes(str2))
 }
 
