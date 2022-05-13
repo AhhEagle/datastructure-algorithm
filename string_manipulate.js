@@ -102,4 +102,29 @@ function areAnagrams(str1, str2){
     return (!!firstString && !!secondString && !(firstString<secondString || secondString<firstString));
 }
 
+function wordSegment(str, dictionary){
+    for (let i = 1; i < str.length + 1; i++) {
+        let first = str.substr(0, i);
+    
+        // check if the first part exists in the dictionary
+        if (dictionary.has(first)) {
+          let second = str.substr(i);
+          if (second.length === 0) {
+            return true;
+          }
+          // check if the second part exists in the dictionary
+          if (dictionary.has(second)) {
+            return true;
+          }   // recursive call
+              if (wordSegment(second, dictionary)) {
+                  return true;
+              }
+        }
+      }
+      return false;
+}
+let str1 = "hel";
+let dictionary1 = new Set(["hello", "hell", "on", "now"]);
+console.log(wordSegment(str1, dictionary1));
+
 
