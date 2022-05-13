@@ -94,9 +94,9 @@ return words.map((word) => {
 }
 
 function areAnagrams(str1, str2){
-    if(str1 == null || str1 == undefined || str2 == null || str2 == undefined || !firstString.length == secondString.length ){
-        return false;
-    }
+    // if(str1 == null || str1 == undefined || str2 == null || str2 == undefined || !firstString.length == secondString.length ){
+    //     return false;
+    // }
     let firstString = str1.split("").sort();
     let secondString = str2.split("").sort();
     return (!!firstString && !!secondString && !(firstString<secondString || secondString<firstString));
