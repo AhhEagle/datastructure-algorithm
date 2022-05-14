@@ -263,7 +263,6 @@ class SingleLinked{
       
         return pointer1;
       }
-
       decimalValue(){
         let res = 0;
         let current = this.head;
@@ -274,7 +273,6 @@ class SingleLinked{
         }
          return res;
     }
-
 
 }
 
