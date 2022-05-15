@@ -1,5 +1,8 @@
 // checking if a word is a palindrome or not
 function palin(str){
+    if(str == null){
+       throw new Error ("Invalid input");
+    }
     let letters = []; // the stack
    let reversed = ""; // reversed word
 
@@ -16,15 +19,20 @@ if (reversed == str){
  
 }
 }
-//console.log(palin('dimeji'))
+//console.log(palin(null))
 //Balanced Expressions
 //edge cases: 
 //( , ((), (], )(
 
 function balancedExpression(input){
-    let brackets=[]
+    if(input == null){
+        throw new Error ("Invalid input");
+     }
+    let brackets=[];
+    let isLeft = "(<[{";
     for(let i = 0; i<input.length; i++){
-        if(isleft(input, i)){
+       // if(isleft(input, i)){
+           if(isLeft.includes(input[i])){
             brackets.push(input[i])
         }
 
@@ -51,7 +59,7 @@ function isRight(input, i){
 function compare(input, i, res){
     return (input[i] == ')' && res != '(') || (input[i] == '>' && res != '<' ) || (input[i] == ']' && res != '[') || (input[i] == '}' && res != '{')
 }
-//console.log(balancedExpression("[(1+2]"));
+console.log(balancedExpression("[{(1+2)]"));
 
 var decodeString = function(s) {
     let i = 0; const stack = []; 
