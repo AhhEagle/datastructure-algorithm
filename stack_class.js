@@ -35,6 +35,19 @@ class Stack{
     }
 }
 
+function anotherPush(element){
+    this.items[count++] = element;
+    this.top = this.items[count]
+}
+
+function anotherpop(){
+    if(count == 0){
+        return null
+    } 
+    count--;
+    return this.items[count];
+}
+
 let testStack =  new Stack();
 // console.log(testStack.push(5));
 // console.log(testStack.push(7));
