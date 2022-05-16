@@ -9,6 +9,30 @@ function Queue(){
     this.isEmpty= ()=>{return collection.length === 0};
 }
 
+function QueueWithTwoStack(){
+    let stackOne = [];
+    let stackTwo = [];
+
+    this.enqueue = (element) =>{
+        stackOne.push(element)
+    }
+    this.dequeue= ()=>{
+        if(stackOne == "" && stackTwo == ""){
+            new Error ("IllegalStateExecption");
+        }
+        if(stackTwo == ""){
+            while(!(stackOne == "")){
+                stackTwo.push(stackOne.pop())
+            }
+        }
+       return stackTwo.pop()
+}
+    this.toString = ()=>{
+        return stackTwo
+    }
+   
+}
+
 class QueueTwo {
     constructor(){
         this.items = Doublelinkedlist;
@@ -40,7 +64,12 @@ class QueueTwo {
 }
 
 
-let q = new Queue();
+let q = new QueueWithTwoStack();
+q.enqueue(10);
+q.enqueue(20);
+q.enqueue(30);
+console.log(q.dequeue())
+console.log(q.toString())
 // q.enqueue('a');
 // q.enqueue('b');
 // q.enqueue('c');
