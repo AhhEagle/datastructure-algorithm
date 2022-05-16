@@ -17,11 +17,11 @@ function QueueWithTwoStack(){
         stackOne.push(element)
     }
     this.dequeue= ()=>{
-        if(stackOne == "" && stackTwo == ""){
-            new Error ("IllegalStateExecption");
+        if(!stackOne.length && !stackTwo.length){
+           return new Error ("IllegalStateExecption");
         }
-        if(stackTwo == ""){
-            while(!(stackOne == "")){
+        if(stackTwo.length == 0){
+            while(stackOne.length !=0){
                 stackTwo.push(stackOne.pop())
             }
         }
@@ -65,11 +65,17 @@ class QueueTwo {
 
 
 let q = new QueueWithTwoStack();
-q.enqueue(10);
-q.enqueue(20);
-q.enqueue(30);
-console.log(q.dequeue())
-console.log(q.toString())
+// q.enqueue(10);
+// q.enqueue(20);
+// q.enqueue(30);
+// console.log(q.dequeue())
+// q.enqueue(40);
+// console.log(q.dequeue())
+// console.log(q.dequeue());
+// console.log(q.dequeue());
+// console.log(q.dequeue());
+// q.enqueue(50);
+// console.log(q.toString())
 // q.enqueue('a');
 // q.enqueue('b');
 // q.enqueue('c');
