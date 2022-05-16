@@ -6,7 +6,7 @@ class Node {
     }
 }
 
-module.exports = class DoubleLinked{
+class DoubleLinked{
    constructor(){
         this.head;
         this.tail;
@@ -21,8 +21,8 @@ module.exports = class DoubleLinked{
            this.head.prev = node ;
            this.head = node;
        }
-
        this.size++;
+       return data;
    }
      addLast(data){
        let node = new Node(data);
@@ -35,6 +35,7 @@ module.exports = class DoubleLinked{
        }
 
        this.size++;
+       return data;
    }
 
    insertAfter(data, nodeAfter) {
@@ -89,7 +90,7 @@ module.exports = class DoubleLinked{
 
     firstNode(){
       if(!(this.head == null)){
-        return this.head;
+        return this.head.data;
       } else {
         return null;
       }
@@ -129,14 +130,16 @@ module.exports = class DoubleLinked{
   }
 }
 
-const double =  new DoubleLinked()
-double.addFirst(5);
-double.addFirst(4);
-double.addFirst(3);
-double.addFirst(2);
-double.addLast(6);
-double.addLast(7);
-console.log(double.indexOf(2));
-console.log(double.toString());
-console.log(double.firstNode())
+module.exports = new DoubleLinked ();
+
+// const double =  new DoubleLinked()
+// double.addFirst(5);
+// double.addFirst(4);
+// double.addFirst(3);
+// double.addFirst(2);
+// double.addLast(6);
+// double.addLast(7);
+// console.log(double.indexOf(2));
+// console.log(double.toString());
+// console.log(double.firstNode())
 
