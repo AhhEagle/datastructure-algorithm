@@ -6,7 +6,7 @@ class Node {
     }
 }
 
-class DoubleLinked{
+module.exports = class DoubleLinked{
    constructor(){
         this.head;
         this.tail;
@@ -87,6 +87,14 @@ class DoubleLinked{
       return tobeRemoved.data
     }
 
+    firstNode(){
+      if(!(this.head == null)){
+        return this.head;
+      } else {
+        return null;
+      }
+    }
+
    removeNode(data) {
     let current = this.head;
     while (current) {
@@ -108,6 +116,17 @@ class DoubleLinked{
       current = current.next;
     }
   }
+  toString() {
+    const list = [];
+    let current = this.head;
+
+    while (current !== null) {
+      list.push(JSON.stringify(current.data));
+      current = current.next;
+    }
+
+    return list.toString();
+  }
 }
 
 const double =  new DoubleLinked()
@@ -118,5 +137,6 @@ double.addFirst(2);
 double.addLast(6);
 double.addLast(7);
 console.log(double.indexOf(2));
-console.log(double);
+console.log(double.toString());
+console.log(double.firstNode())
 

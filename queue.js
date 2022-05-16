@@ -1,3 +1,4 @@
+let Doublelinkedlist =  require("./double_linkedlist");
 function Queue(){
     collection =  [];
     this.print = () => console.log(collection);
@@ -8,6 +9,11 @@ function Queue(){
     this.isEmpty= ()=>{return collection.length === 0};
 }
 
+class Queue {
+    constructor(){
+        this.list = new Doublelinkedlist()
+    }
+}
 
 
 let q = new Queue();
