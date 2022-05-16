@@ -69,6 +69,24 @@ class DoubleLinked{
        return -1;
    }
 
+    removeHead(){
+      if(!this.head){
+        return null;
+      }
+      let tobeRemoved = this.head;
+      if(!this.head.next){
+        this.head = null;
+        this.tail = null;
+      } else{
+        let newHead = this.head.next;
+        this.head.next = null;
+        newHead.prev = null;
+        this.head = newHead;
+      }
+      this.size -- ;
+      return tobeRemoved.data
+    }
+
    removeNode(data) {
     let current = this.head;
     while (current) {
