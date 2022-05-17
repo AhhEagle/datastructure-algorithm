@@ -48,7 +48,32 @@ function anotherpop(){
     return this.items[count];
 }
 
-let testStack =  new Stack();
+function stackWithTwoQueues(){
+    let queueOne = [];
+    let queueTwo = [];
+
+    this.add = function (ele){
+        queueOne.push(ele);
+    };
+
+    this.remove = function (){
+        if(!queueOne.length && !queueTwo.length){
+            return new Error ("IllegalStateException")
+        }
+        if(queueTwo.length == 0){
+            while(queueOne.length !=0){
+                queueTwo.push(queueOne.shift())
+            }
+        }
+       return queueTwo.pop()
+    }
+
+    this.toString
+
+}
+let q = new stackWithTwoQueues()
+
+//let testStack =  new Stack();
 // console.log(testStack.push(5));
 // console.log(testStack.push(7));
 // console.log(testStack.push(8));
