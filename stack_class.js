@@ -68,7 +68,13 @@ function stackWithTwoQueues(){
        return queueTwo.pop()
     }
 
-    this.toString
+    this.size = function(){
+        return queueTwo.length;
+    }
+
+    this.peek = function(){
+        return queueTwo[queueTwo.length - 1];
+    }
 
 }
 let q = new stackWithTwoQueues()
