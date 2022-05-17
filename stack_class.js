@@ -68,6 +68,10 @@ function stackWithTwoQueues(){
        return queueTwo.pop()
     }
 
+    this.isEmpty = function (){
+        return  ((queueOne.length + queueTwo.length) === 0)
+    }
+
     this.size = function(){
         return queueTwo.length;
     }
