@@ -202,8 +202,7 @@ class SingleLinked{
         }
         console.log(sorted);
            return sorted;
-    };
-    
+    }
     sortedList(head, node){
         if(!node){
             return head;

@@ -8,6 +8,7 @@ function PriorityQueue(){
             collection.push(element);
         } else {
             let added = false;
+            //shifting 
             for(let i=0; i<collection.length; i++){
                 if(element[1] < collection[i][1]){ // to check priorities
                     collection.splice(i,0,element);
