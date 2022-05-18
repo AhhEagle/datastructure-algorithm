@@ -88,8 +88,3 @@ let q = new stackWithTwoQueues()
 // console.log(testStack.push(7));
 // console.log(testStack.push(8));
 // console.log(testStack.peek());
-// console.log("this is empty", testStack.isEmpty());
-// console.log(testStack.size());
-// console.log("This is pop", testStack.pop());
-// console.log(testStack.peek());
-// console.log(testStack.size());
