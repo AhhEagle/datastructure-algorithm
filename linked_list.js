@@ -288,8 +288,6 @@ console.log(ll_linked);
 //ll_linked.removeFirst();
 //ll_linked.removeLast();
 //console.log(ll_linked.getKthFromTheEnd(3));
-//console.log(ll_linked.returnSize());
-//console.log(ll_linked.contains(0));
-//console.log(ll_linked.toArray());
+
 
 
