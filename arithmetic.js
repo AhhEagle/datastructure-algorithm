@@ -120,3 +120,45 @@ let convertToPostfix = function(expr) {
     }
     return postFix;
 };
+
+// Evalutes the expression to postfix notation
+let EvaluatePostfix = function(postFix) {
+    if(!postFix.length){
+        return 0;
+    }
+
+    let operands = [];
+
+    for (let x = 0; x < postFix.length; x++) {
+        
+        if (postFix[x].isOperator) {
+            // Get two values to perform the operation on
+            let val2 = operands.pop();
+            let val1 = operands.pop();
+            // Perform the operation based on the operator
+            let op = postFix[x].value;
+
+            if (op === '+') {
+                operands.push(val1 + val2);
+            } else if (op === '-') {
+                operands.push(val1 - val2);
+            } else if (op === '*') {
+                operands.push(val1 * val2);
+            } else if (op === '/') {
+                operands.push(val1 / val2);
+            }
+            } else {
+                // Push the operand on the operands stack
+                operands.push(postFix[x].value);
+        }
+    }
+    return operands.pop();
+};
+
+let Evaluate = function(expr) {
+
+    // The pointer to our expression is passed to the ConvertToPostfix function
+    // The tokenized vector returned from ConvertToPostFix is then passed 
+    // to the EvalulatePostfix function
+    return EvaluatePostfix(convertToPostfix(expr));
+};
