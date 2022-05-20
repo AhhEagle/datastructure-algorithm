@@ -1,3 +1,4 @@
+//reverse polish notation
 class Token {
     constructor(value, isOperator) {
       this.value = value;

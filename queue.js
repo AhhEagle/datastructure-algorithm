@@ -78,12 +78,3 @@ let q = new QueueWithTwoStack();
 // console.log(q.toString())
 // q.enqueue('a');
 // q.enqueue('b');
-// q.enqueue('c');
-// q.print();
-// q.dequeue();
-// console.log(q.front());
-// q.print();
-
-// let newq = new QueueTwo()
-// console.log(newq.enqueue(2))
-// console.log(newq.dequeue())
