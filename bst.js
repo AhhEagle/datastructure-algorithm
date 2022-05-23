@@ -68,7 +68,7 @@ class BST{
             return searchTree(node);
         }
     }
-
+ // modified insertion
 //O(log n)
     findMin(){
         let current = this.root;
