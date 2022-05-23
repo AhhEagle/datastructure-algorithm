@@ -69,6 +69,14 @@ class BST{
         }
     }
  // modified insertion
+  anotherAddNode(data) {
+    const newNode = new Node(data);
+    if (!this.root) {
+      this.root = newNode; 
+    } else {
+      this.insertNode(this.root, newNode);
+    }  
+  }
 //O(log n)
     findMin(){
         let current = this.root;
