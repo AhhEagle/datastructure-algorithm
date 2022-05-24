@@ -110,7 +110,7 @@ class BstTwo{
             return null;
         }
     }
-    
+
     traverseBFS() {
         if (!this.root) return;
         this.queue = [];
@@ -129,6 +129,24 @@ class BstTwo{
         }
         return this.output;
       }
+
+//Function to check if the two trees are identical
+   areIdentical (tree1, tree2) {
+	// Returns true if both trees have null as root (first base case)
+	if (!tree1 && !tree2) {
+		return true;
+	}
+	// Function returns false if one of the roots here is null (second base case)
+	if (tree1 && tree2) {
+		// Returns true if both nodes have the same left sub-tree, right sub-tree
+		// and value  
+			return (tree1.data === tree2.data &&
+						this.areIdentical(tree1.left, tree2.left) &&
+						this.areIdentical(tree1.right, tree2.right));
+	}
+	// Returns false if neither of the above cases is satisfied
+	return false;
+};
     
 }
 

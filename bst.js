@@ -184,7 +184,7 @@ class BST{
                 node.left && traversePreOrder(node.left);
                 node.right && traversePreOrder(node.right);
             };
-            traverseInOrder(this.root);
+            traversePreOrder(this.root);
             return result;
         }
     }
