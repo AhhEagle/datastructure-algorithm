@@ -68,7 +68,6 @@ function betterDuplicate(n){
 
 }
 //console.log(betterDuplicate([1,3,3,6]));
-
 function maxChar(n){
     let characters = {};
     for(let character of n){
@@ -223,10 +222,10 @@ function getPermutation(string, prefix=''){
 //     return true;
 //   }
 
-/* function mergeTwo(arr1, arr2) {
+ function mergeTwo(arr1, arr2) {
     let result = [...arr1, ...arr2];
     return result.sort((a,b) => a-b);
-  }*/
+  }
   
   //console.log(mergeTwo([1,3,5,7], [2,4,6]));
 
