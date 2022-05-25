@@ -324,5 +324,3 @@ var a = "test";
 var b = String("test");
 var d =  new String ("test");
 //console.log( a === d)
-let z = ((24 / 3 + 12) / 4) - 7;
-//console.log(z)
