@@ -7,13 +7,11 @@ class InorderIterator {
       // it is always at the first element of tree in its in-order
       this.populateStack(root)
     }
-    
     // When our iterator is initialized, we populate our stack with all nodes from
       // the root till the left-most node
       inorderIterator(root) {
           populateStack(root);
       }
-  
     // Function to populate the stack from the root till the left-most node
     populateStack(root) {
       while (root) {
@@ -21,7 +19,6 @@ class InorderIterator {
         root = root.left;
       }
     }
-  
     // This function checks if there is a node next in line inside the iterator
     hasNext() {
       if (!this.stk || this.stk.length === 0) {
