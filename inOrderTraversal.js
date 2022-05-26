@@ -22,7 +22,6 @@ function iterativeInorder(root) {
           root = stk[stk.length - 1].right;
           stk.pop();
         }
-  
       //Truncating right most comma
       result = result.slice(0, -2);   
       process.stdout.write(result);
