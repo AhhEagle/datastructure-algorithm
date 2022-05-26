@@ -81,13 +81,31 @@ class BstTwo{
         }
     }
 
-    inOrder(node){
-        if(node){
-            this.inOrder(node.left);
-            console.log(node.data);
-            this.inOrder(node.right);
-        } else {
+    // inOrder(node){
+    //     let result = [];
+    //     if(node){
+    //         this.inOrder(node.left);
+    //         result.push(node.data);
+    //         this.inOrder(node.right);
+    //     } else {
+    //         return result;
+    //     }
+
+    //     return result;
+    // }
+
+    inOrder(){
+        if(this.root == null){ 
             return null;
+        } else{
+            var result = new Array();
+            function traverseInOrder(node){
+                node.left && traverseInOrder(node.left);
+                result.push(node.data);
+                node.right && traverseInOrder(node.right);
+            }
+            traverseInOrder(this.root);
+            return result;
         }
     }
 
@@ -151,3 +169,12 @@ class BstTwo{
 }
 
 let bst = new BstTwo();
+bst.addNode(7)
+bst.addNode(5)
+bst.addNode(6)
+bst.addNode(3)
+bst.addNode(10)
+bst.addNode(11)
+bst.addNode(8)
+console.log(bst.inOrder())
+
