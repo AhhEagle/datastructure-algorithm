@@ -27,7 +27,6 @@ class InorderIterator {
         return true;
       }
     }
-    
     // getNext returns null if there are no more elements in tree
     getNext() {
       // Return null if there's no succeeding node to return

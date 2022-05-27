@@ -129,7 +129,6 @@ class BinaryTree {
     populateCount() {
         this.populateCountRec(this.root);
     }
-
    getTreeDeepCopyRec(node) {
         if (node != null) {
             let newNode = new BinaryTreeNode(node.data);
