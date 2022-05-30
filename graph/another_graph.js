@@ -8,4 +8,21 @@ class Graph {
      this.adjList.set(vertex, []);
      this.noOfVertices++;
  }
+
+ addEdge(vertex1, vertex2){
+     this.adjList.get(vertex1).push(vertex2);
+     this.adjList.get(vertex2).push(vertex1);
+ }
+
+ print() {
+    const keys = this.adjList.keys();
+    for (let i of keys) {
+      const values = this.adjList.get(i);
+      let value = "";
+      for (let j of values) {
+        value += j + " ";
+      }
+      console.log(`${i} => ${value}`);
+    }
+  }
 }
