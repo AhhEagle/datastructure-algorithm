@@ -117,18 +117,18 @@ export default class LinkedList {
       let currentNode = this.head;
       // if first node's is the node to be deleted, delete it and return true
       if (currentNode.data == value) {
-        this.head = currentNode.nextElement;
+        this.head = currentNode.next;
         return true;
       }
   
       // else traverse the list
-      while (currentNode.nextElement != null) {
+      while (currentNode.next != null) {
         // if a node whose next node has the value as data, is found, delete it from the list and return true
-        if (currentNode.nextElement.data == value) {
-          currentNode.nextElement = currentNode.nextElement.nextElement;
+        if (currentNode.next.data == value) {
+          currentNode.next = currentNode.next.next;
           return true;
         }
-        currentNode = currentNode.nextElement;
+        currentNode = currentNode.next;
       }
       //else node was not found, return false
       deleted = false;
@@ -142,16 +142,16 @@ export default class LinkedList {
       //if linked list is not empty, get the pointer to first node
       let firstNode = this.head;
       //check for the corner case when linked list has only one element
-      if (firstNode.nextElement == null) {
+      if (firstNode.next == null) {
         this.deleteAtHead();
         return this;
       }
       //otherwise traverse to reach second last node
-      while (firstNode.nextElement.nextElement != null) {
-        firstNode = firstNode.nextElement;
+      while (firstNode.next.next != null) {
+        firstNode = firstNode.next;
       }
       //since you have reached second last node, just update its nextElement pointer to point at null, skipping the last node
-      firstNode.nextElement = null;
+      firstNode.next = null;
       return this;
     }
   }

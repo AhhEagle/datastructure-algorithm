@@ -1,3 +1,4 @@
+import LinkedList from './Linked_List';
 export default class Graph {
     constructor(vertices) {
      
