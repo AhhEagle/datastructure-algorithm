@@ -7,7 +7,7 @@ export default class LinkedList {
     //Insertion At Head  
     insertAtHead(newData) {
       let tempNode = new Node(newData);
-      tempNode.nextElement = this.head;
+      tempNode.next = this.head;
       this.head = tempNode;
       return this; //returning the updated list
     }
@@ -26,7 +26,7 @@ export default class LinkedList {
         while (temp != null) {
           process.stdout.write(String(temp.data));
           process.stdout.write(" -> ");
-          temp = temp.nextElement;
+          temp = temp.next;
         }
         console.log("null");
         return true;
@@ -50,7 +50,7 @@ export default class LinkedList {
         while (temp != null) {
           st += String(temp.data);
           st += " -> ";
-          temp = temp.nextElement;
+          temp = temp.next;
         }
         st += "null";
         return st;
@@ -71,12 +71,12 @@ export default class LinkedList {
       let currentNode = this.head;
   
       //Iterate to the last element
-      while (currentNode.nextElement != null) {
-        currentNode = currentNode.nextElement;
+      while (currentNode.next != null) {
+        currentNode = currentNode.next;
       }
   
       //Make new node the nextElement of last node of list
-      currentNode.nextElement = node;
+      currentNode.next = node;
       return this;
     }
     search(value) {
@@ -88,7 +88,7 @@ export default class LinkedList {
         if (currentNode.data == value) {
           return true; //value found
         }
-        currentNode = currentNode.nextElement
+        currentNode = currentNode.next;
       }
       return false; //value not found
     }
@@ -101,13 +101,12 @@ export default class LinkedList {
       let firstElement = this.head;
   
       //If list is not empty, link head to the nextElement of firstElement
-      this.head = firstElement.nextElement;
+      this.head = firstElement.next;
   
       return this;
     }
     deleteVal(value) {
       let deleted = null; //True or False
-      //Write code here
   
       //if list is empty return false
       if (this.isEmpty()) {
