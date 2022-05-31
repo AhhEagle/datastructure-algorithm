@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/AhhEagle/datastructure-algorithm.git"
   },
+  "type": "module",
   "author": "Olateju Oladimeji",
   "license": "ISC",
   "bugs": {

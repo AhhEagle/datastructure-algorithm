@@ -1,4 +1,4 @@
-import Node from "./node";
+import Node from "./node.js";
 export default class LinkedList {
     constructor() {
       this.head = null;
@@ -155,3 +155,6 @@ export default class LinkedList {
       return this;
     }
   }
+
+  let ll = new LinkedList();
+ 

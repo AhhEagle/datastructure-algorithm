@@ -1,7 +1,6 @@
-import LinkedList from './Linked_List';
+import LinkedList from './Linked_List.js';
 export default class Graph {
     constructor(vertices) {
-     
       this.vertices = vertices;
       
       this.list = [];
