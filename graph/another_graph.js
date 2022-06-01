@@ -33,4 +33,5 @@ graph.addVertex("b");
 graph.addVertex("c");
 graph.addEdge("a","b");
 graph.addEdge("a","c");
+
 console.log(graph.print());

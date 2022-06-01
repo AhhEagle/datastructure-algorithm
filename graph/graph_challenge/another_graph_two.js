@@ -20,7 +20,7 @@ export default class Graph {
     }
   
     printGraph() {
-      console.log(">>Adjacency List of Directed Graph<<");
+      console.log("Adjacency List of Directed Graph");
       var i;
       for (i = 0; i < this.list.length; i++) {
         process.stdout.write("|" + String(i) + "| => ");
