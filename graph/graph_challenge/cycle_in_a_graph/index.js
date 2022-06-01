@@ -34,7 +34,6 @@ function detectCycle( g) {
 
     //Boolean array of vertices which will recursively called
      var recNodes = [];
-
     for(var i = 0; i < num_of_vertices; i++)
     {
         visited[i] = false;

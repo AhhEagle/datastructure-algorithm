@@ -11,8 +11,7 @@ export default class Graph {
         this.list.push(temp);
       }
     }
-  
-    addEdge(source, destination) {
+      addEdge(source, destination) {
       if (source < this.vertices && destination < this.vertices)
       
       this.list[source].insertAtHead(destination);
