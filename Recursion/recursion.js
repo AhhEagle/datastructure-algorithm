@@ -26,6 +26,7 @@ function pascal(variable){
     // Recursive case
    let previousLine = pascal(variable - 1);
    console.log(previousLine);
+   console.log(previousLine.length);
 
     for (let i = 0; i < previousLine.length - 1; i++) {
       line.push(previousLine[i] + previousLine[i + 1]);
