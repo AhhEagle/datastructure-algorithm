@@ -39,3 +39,15 @@ function pascal(variable){
 
 console.log(pascal(5));
 
+//Converting decimal to binary 
+function decimalToBinary(variable) {
+  // Base case
+  if (variable <= 1) {
+    return String(variable)
+  }
+
+  // Recursive case
+  else {
+    return decimalToBinary(Math.floor(variable / 2)) + decimalToBinary(variable % 2)
+  }
+}
