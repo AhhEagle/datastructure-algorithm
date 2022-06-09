@@ -51,3 +51,17 @@ function decimalToBinary(variable) {
     return decimalToBinary(Math.floor(variable / 2)) + decimalToBinary(variable % 2)
   }
 }
+//check palindrome
+function isPalindrome(word){
+ // Base case
+ if (word.length <= 1) { // Strings that have length 1 or 0 are palindrome
+  return true;
+}
+
+// Recursive case
+else if (word[0] == word[word.length - 1]) { // compare the first and last elements
+  return isPalindrome(word.substring(1, word.length - 1));
+}
+
+return false;
+}
