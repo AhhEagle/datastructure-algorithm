@@ -26,7 +26,7 @@ function pascal(variable){
     // Recursive case
    let previousLine = pascal(variable - 1);
    console.log(previousLine);
-   console.log(previousLine.length);
+   //console.log(previousLine.length);
 
     for (let i = 0; i < previousLine.length - 1; i++) {
       line.push(previousLine[i] + previousLine[i + 1]);
@@ -37,7 +37,7 @@ function pascal(variable){
 
 }
 
-console.log(pascal(5));
+console.log(pascal(2));
 
 //Converting decimal to binary 
 function decimalToBinary(variable) {
@@ -64,4 +64,30 @@ else if (word[0] == word[word.length - 1]) { // compare the first and last eleme
 }
 
 return false;
+}
+
+function balanced(testVariable, startIndex = 0, currentIndex = 0) {
+  //Base case
+  if (startIndex == testVariable.length) {
+    return currentIndex == 0
+  }
+
+  // Base case
+  if (currentIndex < 0) { // A closing parenthesis did not find its corresponding opening parenthesis
+    return false
+  }
+
+  // Recursive case1
+  if (testVariable[startIndex] == "(") { 
+    return balanced(testVariable, startIndex + 1, currentIndex + 1)
+  }
+
+  // Recursive case2
+  else if (testVariable[startIndex] == ")") { 
+    return  balanced(testVariable, startIndex + 1, currentIndex - 1)
+  }
+
+  else {
+    return false // the string contained an unrecognized character
+  }
 }
