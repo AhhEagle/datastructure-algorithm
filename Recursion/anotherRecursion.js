@@ -46,3 +46,16 @@ function isVowel(character) {
     // Recursive case
     return firstIndex(arr, testVariable, currentIndex + 1);
   }
+
+  function fibonacci(testVariable) {
+    var fn0 = 0;
+    var fn1 = 1;
+      
+    for (let i = 0; i < testVariable; i++) {
+      var temp = fn0 + fn1;
+      fn0 = fn1;
+      fn1 = temp;
+    }
+    return fn0;
+  }
+
