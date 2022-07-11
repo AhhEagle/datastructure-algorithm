@@ -47,7 +47,7 @@ function isVowel(character) {
     return firstIndex(arr, testVariable, currentIndex + 1);
   }
 
-  function fibonacci(testVariable) {
+  function fibonacciIterative(testVariable) {
     var fn0 = 0;
     var fn1 = 1;
       
@@ -57,5 +57,11 @@ function isVowel(character) {
       fn1 = temp;
     }
     return fn0;
+  }
+  function fibonacciRecursion(testVariable) {
+    if (testVariable <= 1) {
+      return testVariable;
+    }
+    return(fibonacciRecursion(testVariable - 1) + fibonacciRecursion(testVariable - 2));
   }
 
