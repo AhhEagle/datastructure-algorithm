@@ -4,7 +4,6 @@ function removeSpace(string) {
         return "";
     }
   
-    // Recursive case
     if (string[0] == "\t" || string[0] == " ") {
         return removeSpace(string.substr(1));
     }
@@ -12,5 +11,18 @@ function removeSpace(string) {
         return string[0] + removeSpace(string.substr(1));
     }
   }
+
+  function removeAdjDuplicates(string) {
+    // Base case
+    if (string.length <= 1) {
+        return string;
+    }
   
-  console.log(removeSpace("H ello"))
+    else if (string[0] == string[1]) {
+        return removeAdjDuplicates(string.substr(1));
+    }
+  
+    return string[0] + removeAdjDuplicates(string.substr(1));
+  }
+  
+  console.log(removeAdjDuplicates('Hellloo')); 
