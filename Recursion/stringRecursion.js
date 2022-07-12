@@ -25,4 +25,33 @@ function removeSpace(string) {
     return string[0] + removeAdjDuplicates(string.substr(1));
   }
   
-  console.log(removeAdjDuplicates('Hellloo')); 
+  function mergeLexico(string1, string2) {
+    if (string1.length == 0) {
+      if (string2.length == 0) { 
+        return "";
+      }
+      return string2;
+    }
+  
+    else if (string2.length == 0) {
+      return string1;
+    }
+
+    else if (string1[0] > string2[0]) {
+      return string2[0] + mergeLexico(string1, string2.substr(1));
+    }
+  
+    else {
+      return string1[0] + mergeLexico(string1.substr(1), string2);
+    }
+  }
+
+  function sumDigits(testVariable) {
+    if (testVariable === "") {
+      return 0;
+    }
+    else {
+      return Number(testVariable[0]) + sumDigits(testVariable.substr(1));
+    }
+  }
+  
