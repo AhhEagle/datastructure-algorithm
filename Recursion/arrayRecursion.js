@@ -14,9 +14,20 @@ function count(myArray, key) {
       }
       
       else if (myArray.length == 1) {
-       return array;
+       return myArray;
       }
     
       return [myArray[myArray.length - 1]].concat(reverse(myArray.slice(0, myArray.length - 1)));
+  }
+
+  function replaceNegative(array, currentIndex) {
+    if (currentIndex < array.length) {
+      if (array[currentIndex] < 0) {
+        array[currentIndex] = 0;
+      }
+  
+      replaceNegative(array, currentIndex + 1);
+    }
+    return;
   }
   
