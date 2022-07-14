@@ -31,3 +31,15 @@ function count(myArray, key) {
     return;
   }
   
+  function average(testVariable, currentIndex = 0) {
+	if (currentIndex == testVariable.length - 1) { 
+		return testVariable[currentIndex]
+	}
+	
+	if (currentIndex == 0) { 
+		return ((testVariable[currentIndex] + average(testVariable, currentIndex + 1)) / testVariable.length)
+	}
+	
+	// Compute sum 
+	return (testVariable[currentIndex] + average(testVariable, currentIndex + 1)) 
+}
