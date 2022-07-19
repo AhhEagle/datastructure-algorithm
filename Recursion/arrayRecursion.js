@@ -66,3 +66,24 @@ function sort(testVariable, length) {
 
 	testVariable[temp + 1] = lastElement // place the element in its correct position
 }
+
+//flatten an array
+function flatten(nestedArray) {
+  const newArray = [];
+
+  for(let i = 0; i < nestedArray.length; i++) {
+      const thisItem = nestedArray[i];
+    
+       if(Array.isArray(thisItem)) {
+           const flatItem = flatten(thisItem);
+         
+           for(let j = 0; j < flatItem.length; j++) {
+               newArray.push(flatItem[j]);
+           }
+       } else {
+           newArray.push(thisItem);
+       }
+  }
+  
+  return newArray;
+}
