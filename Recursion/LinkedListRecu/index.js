@@ -22,6 +22,16 @@ function reverse(myLinkedList) {
 	helperFunction(myLinkedList, myLinkedList.head, null); 
 }
 
+function length(testVariable, head) {
+	if (head == null) {
+		return 0;
+	}
+		
+	else {
+		return 1 + length(testVariable, head.next); 
+	}
+}
+
 
 // var list = new LinkedList();
 // list.appendNode(6); 

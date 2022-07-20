@@ -68,6 +68,7 @@ function sort(testVariable, length) {
 }
 
 //flatten an array
+//flatten([ [ [ [1], 2], 3], [4], [], [[5]]]);
 function flatten(nestedArray) {
   const newArray = [];
 
