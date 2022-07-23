@@ -97,6 +97,19 @@ const permute = (nums) => {
     return true;
 }
 
+function getMaxProfit(prices) {
+  let minPrice = Infinity;
+  let maxProfit = 0;
+
+  for(let i = 0; i < prices.length; i++) {
+      const currentPrice = prices[i];
+      minPrice = Math.min(minPrice, currentPrice);
+      maxProfit = Math.max(maxProfit, currentPrice - minPrice);
+  }
+  
+  return maxProfit;
+}
+
 //newPermute([1,2,3]);
 
 
