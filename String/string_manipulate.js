@@ -141,4 +141,32 @@ function stringRotation(str1, str2) {
     return false;
 }
 
+//'abcd', 'abcde'
+function singleMutation(str1, str2){
+    if(Math.abs(str1.length - str2.length)> 1){
+        return false
+    }
+
+    let mut = 0;
+
+    for(let i = 0, j = 0; i < str1.length || j < str2.length; i++, j++) {
+        console.log(i + " " + j);
+        if(str1[i] !== str2[j]) {
+            mut++;
+            if(mut > 1) {
+                return false;
+            }
+
+            if(str1.length > str2.length) {
+                j--;
+            } else if(str1.length < str2.length){
+                i--;
+            }
+        }
+    }
+
+    return true;
+}
+console.log(singleMutation('abcd', 'abcde'));
+
 
