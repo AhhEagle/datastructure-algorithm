@@ -36,8 +36,6 @@ function mergeSortedArray(arr, arr1){
     }
     return merged 
 }
-console.log(mergeSortedArray([1,3,4,5], [2,6,7,8]))
-
 function findSum(arr, value){
     arr.sort (function (a,b){ return a-b});
     let index;
@@ -49,4 +47,9 @@ function findSum(arr, value){
     return false;
 
 }
+ 
+function binarySearch(arr, item){
+
+}
+
 
