@@ -39,7 +39,14 @@ function mergeSortedArray(arr, arr1){
 console.log(mergeSortedArray([1,3,4,5], [2,6,7,8]))
 
 function findSum(arr, value){
-    arr.sort (function (a,b){ return a-b})
+    arr.sort (function (a,b){ return a-b});
+    let index;
+    for(var i = 0; i <arr.length; i++){
+        index = binarySearch(arr, (value - arr[i]))
+        if(index !=false && i != index)
+            return [arr[i], value-arr[i]]
+    }
+    return false;
 
 }
 
