@@ -6,7 +6,6 @@ function removeEven(arr){
             newArray.push(arr[i]);
         }
     }
-
     return newArray;
 }
 
@@ -26,7 +25,6 @@ function mergeSortedArray(arr, arr1){
             j++
         }
     }
-    
     if(i <= (arr.length - 1)){
         arr.splice(0, i)
         merged = merged.concat(arr);
@@ -52,6 +50,7 @@ function binarySearch(arr, item){
     let first = 0, mid;
     let last = arr.length - 1;
     let elementFound = false
+    let index = -1
 
 }
 
