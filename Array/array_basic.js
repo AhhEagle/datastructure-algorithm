@@ -49,6 +49,9 @@ function findSum(arr, value){
 }
  
 function binarySearch(arr, item){
+    let first = 0, mid;
+    let last = arr.length - 1;
+    let elementFound = false
 
 }
 
