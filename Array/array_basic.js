@@ -49,8 +49,25 @@ function findSum(arr, value){
 function binarySearch(arr, item){
     let first = 0, mid;
     let last = arr.length - 1;
-    let elementFound = false
-    let index = -1
+    let elementFound = false;
+    let index = -1;
+    while( (first <= last) && !elementFound){
+        mid = Math.floor((first + last) / 2)
+        if( arr[mid] == item){
+            index = mid
+            elementFound = true
+        }
+        else{
+            if(item < arr[mid])
+                last = mid - 1
+            else
+                first = mid + 1
+        }
+    }
+    if (elementFound)
+         return index
+     else
+         return false
 
 }
 
