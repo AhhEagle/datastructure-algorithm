@@ -78,7 +78,6 @@ function findProduct(arr) {
         product[i]  = temp;
         temp = temp * arr[i];
     }
-
     temp = 1;
     for (let i = arr.length - 1; i > -1; i--) {
         product[i] *= temp;
@@ -86,6 +85,17 @@ function findProduct(arr) {
     }
 
     return product
+}
+
+function findMinimum(arr) {
+    var currentMin = arr[0];
+    for (let val of arr) {
+        if (val < currentMin)
+            currentMin = val
+    }
+
+    return currentMin
+
 }
 
 
