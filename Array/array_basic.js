@@ -88,14 +88,25 @@ function findProduct(arr) {
 }
 
 function findMinimum(arr) {
-    var currentMin = arr[0];
+    let currentMin = arr[0];
     for (let val of arr) {
         if (val < currentMin)
             currentMin = val
     }
-
     return currentMin
+}
 
+function findSecondMaximum(arr) {
+    let max = Number.NEGATIVE_INFINITY;
+    let secondmax = Number.NEGATIVE_INFINITY;
+    for (let val of arr) {
+        if (val > max) {
+            secondmax = max
+            max = val
+        } else if (val > secondmax && val!=max)
+            secondmax = val
+    }
+    return secondmax
 }
 
 
