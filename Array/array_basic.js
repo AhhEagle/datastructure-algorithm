@@ -109,4 +109,20 @@ function findSecondMaximum(arr) {
     return secondmax
 }
 
+function findFirstUnique(arr){
+    let index1;
+      for(let index=0;index<arr.length;index++){ 
+          index1 = 0
+          while(index1 < arr.length){
+              if ((index != index1 )&& (arr[index] == arr[index1])) 
+                  break
+              index1 += 1
+      }
+          if (index1 == arr.length) 
+              return arr[index] 
+     
+    }
+      return null;
+  }
+
 
