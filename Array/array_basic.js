@@ -72,7 +72,7 @@ function binarySearch(arr, item){
 }
 
 function findProduct(arr) {
-    var temp = 1,
+    let temp = 1,
         product = [];
     for (let i = 0; i < arr.length ; i++) {
         product[i]  = temp;
@@ -95,7 +95,6 @@ function findMinimum(arr) {
     }
     return currentMin
 }
-
 function findSecondMaximum(arr) {
     let max = Number.NEGATIVE_INFINITY;
     let secondmax = Number.NEGATIVE_INFINITY;
@@ -108,7 +107,6 @@ function findSecondMaximum(arr) {
     }
     return secondmax
 }
-
 function findFirstUnique(arr){
     let index1;
       for(let index=0;index<arr.length;index++){ 
@@ -120,7 +118,6 @@ function findFirstUnique(arr){
       }
           if (index1 == arr.length) 
               return arr[index] 
-     
     }
       return null;
   }
