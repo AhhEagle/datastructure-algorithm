@@ -122,4 +122,7 @@ function findFirstUnique(arr){
       return null;
   }
 
+  function rightRotate(arr, n) {
+    return (arr.splice(arr.length - n)).concat(arr.splice(0, arr.length))
+}
 
