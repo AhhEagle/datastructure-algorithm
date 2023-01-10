@@ -141,3 +141,23 @@ function reArrange(arr) {
     }
     return arr;
 }
+
+function maxMin(arr) {
+    let maxIdx = arr.length-1
+    let minIdx = 0
+    let maxElem = arr[maxIdx] + 1;
+    for( let i = 0; i < (arr.length); i++) {
+      if (i % 2 == 0){  
+        arr[i] += Math.floor((arr[maxIdx] % maxElem ) * maxElem)
+        maxIdx -= 1
+      }
+      else {
+        arr[i] += Math.floor((arr[minIdx] % maxElem ) * maxElem)
+        minIdx += 1
+      }
+    }
+    for( let i = 0; i < (arr.length); i++) {
+      arr[i] = Math.floor(arr[i] / maxElem)
+    }
+    return arr
+}
