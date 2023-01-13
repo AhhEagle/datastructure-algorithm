@@ -172,3 +172,25 @@ function anotherMaxMin(arr) {
         result.push(arr[Math.floor(arr.length / 2)])
     return result
 }
+
+let findMaxSumSubArray = function(array_) {
+  if (array_.length < 1) {
+    return 0;
+  }
+
+  let currMax = array_[0];
+  let globalMax = array_[0];
+  let lengtharray = array_.length;
+  for (let i = 1; i < lengtharray; i++) {
+    if (currMax < 0) {
+      currMax = array_[i];
+    } else {
+      currMax += array_[i];
+    }
+
+    if (globalMax < currMax) {
+      globalMax = currMax;
+    }
+  }
+  return globalMax;
+};
