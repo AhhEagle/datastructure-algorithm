@@ -115,3 +115,33 @@ LinkedList.prototype.deleteVal = function(value) {
   //else node was not found, return false
   return false;
 }
+
+"use strict";
+const LinkedList = require('./LinkedList.js');
+const Node = require('./Node.js');
+
+//Access HeadNode => this.head
+//Check if list is empty => this.isEmpty()
+// delete first node => this.deleteAtHead()
+//Node class  { data ; Node nextElement;}
+
+LinkedList.prototype.deleteAtTail = function() {
+  // check for the case when linked list is empty
+  if (this.isEmpty()) {
+    return this;
+  }
+  //if linked list is not empty, get the pointer to first node
+  let firstNode = this.head;
+  //check for the corner case when linked list has only one element
+  if (firstNode.nextElement == null) {
+    this.deleteAtHead();
+    return this;
+  }
+  //otherwise traverse to reach second last node
+  while (firstNode.nextElement.nextElement != null) {
+    firstNode = firstNode.nextElement;
+  }
+  //since you have reached second last node, just update its nextElement pointer to point at null, skipping the last node
+  firstNode.nextElement = null;
+  return this;
+}
