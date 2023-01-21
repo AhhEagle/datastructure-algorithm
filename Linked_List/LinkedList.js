@@ -207,3 +207,41 @@ function removeDuplicates(list) {
 
   return list;
 }
+
+"use strict";
+const LinkedList = require('./LinkedList.js');
+const Node = require('./Node.js');
+
+//Access HeadNode => list.getHead()
+//Check if list is empty => list.isEmpty()
+//Insert at head => list.insertAtHead(value)
+//Delete at head => list.deleteAtHead()
+//Insert at tail => list.insertAtTail(value)
+//Search for element => list.search(value)
+//Delete by value => list.deleteVal(value)
+//Create List => list = LinkedList()
+//Remove duplicates => list.removeDuplicates()
+//Node class { data ; Node nextElement;}
+
+
+//Returns a list containing the union of list1 and list2  
+function union(list1, list2) {
+  if (list1.isEmpty()) {
+    return list2;
+  } else if (list2.isEmpty()) {
+    return list1;
+  }
+
+  let start = list1.getHead();
+
+  //Traverse the first list till the tail
+  while (start.nextElement != null) {
+    start = start.nextElement;
+  }
+
+  //Link last element of first list to the first element of second list
+  start.nextElement = list2.getHead();
+  list1.removeDuplicates();
+
+  return list1;
+}
