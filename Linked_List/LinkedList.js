@@ -245,3 +245,38 @@ function union(list1, list2) {
 
   return list1;
 }
+"use strict";
+const LinkedList = require('./LinkedList.js');
+const Node = require('./Node.js');
+
+//Access HeadNode => list.getHead()
+//Check if list is empty => list.isEmpty()
+//Insert at head => list.insertAtHead(value)
+//Delete at head => list.deleteAtHead()
+//Insert at tail => list.insertAtTail(value)
+//Search for element => list.search(value)
+//Delete by value => list.deleteVal(value)
+//Create List => list = LinkedList()
+//Remove duplicates => list.removeDuplicates()
+//Node class { data ; Node nextElement;}
+//Returns a list containing the intersection of list1 and list2  
+function intersection(list1, list2) {
+  let result = new LinkedList();
+
+  let t1 = list1.getHead();
+  let t2 = list2.getHead();
+
+
+  while (t1 != null) {
+    while (t2 != null) {
+      if(t1.data == t2.data){
+         result.insertAtHead(t1.data);
+      }
+      t2 = t2.nextElement;
+    }
+    t2 = list2.getHead();
+    t1 = t1.nextElement;
+  }
+  result.removeDuplicates();
+  return result;
+}
