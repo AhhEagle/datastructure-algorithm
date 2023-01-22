@@ -313,3 +313,43 @@ function findNth(list, n) {
   }
   return nthNode;
 }
+
+"use strict";
+const LinkedList = require('./LinkedList.js');
+const Node = require('./Node.js');
+
+//Access HeadNode => list.getHead()
+//Check if list is empty => list.isEmpty()
+//Insert at head => list.insertAtHead(value)
+//Delete at head => list.deleteAtHead()
+//Insert at tail => list.insertAtTail(value)
+//Search for element => list.search(value)
+//Delete by value => list.deleteVal(value)
+//Node class { data ; Node nextElement;}
+
+//Function to find the nth node from the end of a Linked List
+function findNth(list, n) {
+  let nthNode = list.getHead(); //This iterator will reach the nth node
+  let endNode = list.getHead(); //This iterator will reach the end
+
+  let count = 0;
+  if (!list.isEmpty()) {
+    while (count < n) {
+      if (endNode == null) {
+        console.log("Out of bounds");
+        return null;
+      }
+      endNode = endNode.nextElement;
+      count++;
+    }
+  }
+  while (endNode != null) {
+    endNode = endNode.nextElement;
+    nthNode = nthNode.nextElement;
+  }
+  if (nthNode != null) {
+    return nthNode;
+  } else {
+    return null;
+  }
+}
