@@ -280,3 +280,36 @@ function intersection(list1, list2) {
   result.removeDuplicates();
   return result;
 }
+
+"use strict";
+const LinkedList = require('./LinkedList.js');
+const Node = require('./Node.js');
+
+//Access HeadNode => list.getHead()
+//Check if list is empty => list.isEmpty()
+//Insert at head => list.insertAtHead(value)
+//Delete at head => list.deleteAtHead()
+//Insert at tail => list.insertAtTail(value)
+//Search for element => list.search(value)
+//Delete by value => list.deleteVal(value)
+//Node class { data ; Node nextElement;}
+
+//Function to find the nth node from the end of a Linked List
+function findNth(list, n) {
+  let nthNode = null;
+  let length = 0;
+  let tempNode = list.getHead();
+  while (tempNode != null) {
+    tempNode = tempNode.nextElement;
+    length++;
+  }
+  let nthPos = length - n;
+  if (nthPos < 0 || nthPos > length) {
+    return null;
+  }
+  nthNode = list.getHead();
+  for (var i = 0; i < nthPos; i++) {
+    nthNode = nthNode.nextElement;
+  }
+  return nthNode;
+}
