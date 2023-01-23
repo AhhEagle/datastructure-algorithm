@@ -353,3 +353,30 @@ function findNth(list, n) {
     return null;
   }
 }
+
+"use strict";
+const DoublyLinkedList = require('./DoublyLinkedList.js');
+const Node = require('./Node.js');
+
+//Access HeadNode => this.head
+//Check if list is empty => this.isEmpty()
+//Delete at head => this.deleteAtHead()
+//Search for element => this.search(value)
+//Node class  { data ; Node nextElement;}
+DoublyLinkedList.prototype.deleteAtTail = function() {
+  //if list is empty, do nothing
+  if (this.isEmpty()) {
+    return this;
+  }
+  //Get the head and first element of the list
+  let lastElement = this.tail;
+  //If list is not empty, link head to the nextElement of firstElement
+  this.tail = lastElement.previousElement;
+  if (this.tail == null) {
+    this.head = null;
+    return this;
+  }
+  this.tail.nextElement = null;
+  return this;
+}
+
