@@ -132,14 +132,5 @@ class DoubleLinked{
 
 module.exports = new DoubleLinked ();
 
-// const double =  new DoubleLinked()
-// double.addFirst(5);
-// double.addFirst(4);
-// double.addFirst(3);
-// double.addFirst(2);
-// double.addLast(6);
-// double.addLast(7);
-// console.log(double.indexOf(2));
-// console.log(double.toString());
-// console.log(double.firstNode())
+
 
