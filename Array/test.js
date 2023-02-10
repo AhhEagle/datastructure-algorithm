@@ -24,4 +24,15 @@ function mergeArray(array1, array2){
    return merge
 }
 
-console.log(mergeArray([1,4,8], [2,3,6,7]))
+console.log(sumTo([1,4,8], 5))
+
+function sumTo(array1, value){
+    for(let i =0; i < array1.length; i++){
+        for(let j =0; j < array1.length; j++){
+            if(array1[i] + array1[j] == value){
+                return [array1[i], array1[j]];
+            }
+        }
+    }
+    return false
+}
