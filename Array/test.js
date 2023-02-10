@@ -27,12 +27,36 @@ function mergeArray(array1, array2){
 console.log(sumTo([1,4,8], 5))
 
 function sumTo(array1, value){
-    for(let i =0; i < array1.length; i++){
-        for(let j =0; j < array1.length; j++){
-            if(array1[i] + array1[j] == value){
-                return [array1[i], array1[j]];
-            }
+    let index;
+    for(let i = 0; i < array1.length; i++){
+        index = binarySearch(array1, value - array1[i])
+        if(index != false && i != index){
+            return [array1[i], value - array1[i]];
         }
     }
-    return false
+    return false;
+}
+
+function binarySearch(array, item){
+   let first = 0;
+   let mid;
+   let last =  array.length - 1;
+   let arrayIndex = -1;
+   let found =  false
+   while(first <= last && !found){
+     mid = Math.floor((first + last)/2);
+     if(array[mid] == item ){
+        arrayIndex = mid;
+        found = true
+     }  else{
+        if(item < arr[mid])
+            last = mid - 1
+        else
+            first = mid + 1
+    }
+}
+if (found)
+return arrayIndex
+else
+return false
 }
