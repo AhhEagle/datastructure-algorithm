@@ -17,6 +17,7 @@ function binarySearch(arr, item){
     let arrayIndex = -1
     let seen = false;
     while ((first <= last) && !seen){
+        console.log(!seen)
         mid = Math.floor((first + last)/2);
         if( arr[mid] == item){
             arrayIndex = mid
