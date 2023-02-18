@@ -21,7 +21,6 @@ function isVowel(character) {
   }
 
   function findSquare(testVariable) {
-      //testVariable * testVariable
     // Base case
     if (testVariable == 0) {
       return 0;
