@@ -22,7 +22,6 @@ export default class LinkedList {
 	printList() {
 		let temp = this.head;
 		while(temp != null) {
-			console.log(temp.data);
 			temp = temp.next;
 		}
 	}

@@ -32,9 +32,3 @@ function length(testVariable, head) {
 	}
 }
 
-
-// var list = new LinkedList();
-// list.appendNode(6); 
-// list.appendNode(7); 
-// list.appendNode(8); 
-// list.appendNode(9); 
