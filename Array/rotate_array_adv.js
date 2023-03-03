@@ -77,14 +77,12 @@ function rotateClockwise(mat) {
 
 
   const find_missing_number = function(nums) {
-    // TODO: Write your code here
     let sorted = nums.sort((a,b)=> a-b);
     for(let i =0; i<sorted.length; i++){
         if(sorted[i+1] - sorted[i] > 1){
             return sorted[i+1] -1
         }
     }
-  //  return -1;
   };
   function another_find_missing_number(nums) {
     let i = 0;
