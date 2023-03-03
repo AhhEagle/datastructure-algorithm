@@ -73,7 +73,7 @@ function balanced(testVariable, startIndex = 0, currentIndex = 0) {
   }
 
   // Base case
-  if (currentIndex < 0) { // A closing parenthesis did not find its corresponding opening parenthesis
+  if (currentIndex < 0) {
     return false
   }
 
@@ -88,6 +88,6 @@ function balanced(testVariable, startIndex = 0, currentIndex = 0) {
   }
 
   else {
-    return false // the string contained an unrecognized character
+    return false 
   }
 }
