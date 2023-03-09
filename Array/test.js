@@ -4,8 +4,6 @@ function pali(strg){
 
     while (start < end){
         if(strg[start] != strg[end]){
-            console.log(strg[start]);
-            console.log(strg[end]);
             return false
         }
         start ++;
@@ -79,4 +77,15 @@ function sortTwoArrays(arr1, arr2){
 }
 
 console.log(sortTwoArrays([1,4,6], [2,3,5]));
+
+function longestSum(nums, k){
+    //array of int [1,2,4,3,5]
+    //k =6;
+    //left =0; right =;
+    let left = 0, curr = 0, ans = 0;
+    for (let right =0; right < nums.length; right++){
+
+    }
+}
+
 
