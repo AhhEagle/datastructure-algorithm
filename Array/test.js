@@ -96,4 +96,28 @@ function longestSum(nums, k){
 
 console.log(longestSum([1,2,4,3,5], 6));
 
+function longestSub(str){
+    //"1101100111"
+    //can only flip one zero 
+    let left = 0, curr = 0, ans = 0;
+    for (let right =0; right < str.length; right++){
+        if (str[right] == "0"){
+            curr ++;
+        }
+
+        while(curr > 1){
+            if(str[left] == "0"){
+                curr -=1;
+            }
+            left++;
+        }
+
+        ans = Math.max(ans, right - left + 1);
+     
+    } 
+    return ans;   
+}
+
+console.log(longestSub([1101100111]));
+
 
