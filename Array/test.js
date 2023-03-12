@@ -138,7 +138,7 @@ function numSubarrayProductLessThanK(arr, k){
     } 
     return ans 
 }
-function longestBestArr(nums, k){
+function longestBestSubArr(nums, k){
         let curr = 0;
         for (let i = 0; i < k; i++) {
             curr += nums[i];
