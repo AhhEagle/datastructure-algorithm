@@ -30,6 +30,23 @@ LinkedList.prototype.insertAtTail = function(newData) {
   currentNode.nextElement = node;
   return this;
 }
+
+//Searches a value in the given list.
+LinkedList.prototype.search = function(value) {
+  //Write code here
+  //5->6->7->8->10
+
+  let current = this.head;
+  while(current != null){
+    if(current.data == value){
+      return true;
+    }
+    current = current.nextElement;
+  }
+
+  return false;
+}
+
 let list = new LinkedList()
 for (var i = 0; i < 5; i++) {
   list.insertAtTail(i);
