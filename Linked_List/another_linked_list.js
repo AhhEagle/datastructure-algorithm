@@ -66,6 +66,30 @@ LinkedList.prototype.searchRecursive = function(node, value) {
   return this.searchRecursive(node.nextElement, value);
 }
 
+LinkedList.prototype.deleteVal = function(value) {
+  
+  if (this.isEmpty()) {
+    return false;
+  }
+
+  let currentNode = this.head;
+  if (currentNode.data == value) {
+    this.head = currentNode.nextElement;
+    return true;
+  }
+
+  while (currentNode.nextElement != null) {
+    if (currentNode.nextElement.data == value) {
+      currentNode.nextElement = currentNode.nextElement.nextElement;
+      return true;
+    }
+    currentNode = currentNode.nextElement;
+  }
+  //else node was not found, return false
+  return false;
+}
+
+
 let list = new LinkedList()
 for (var i = 0; i < 5; i++) {
   list.insertAtTail(i);
