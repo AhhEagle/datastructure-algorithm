@@ -47,6 +47,25 @@ LinkedList.prototype.search = function(value) {
   return false;
 }
 
+LinkedList.prototype.searchRecursively = function(value) {
+  return this.searchRecursive(this.head, value);
+}
+
+LinkedList.prototype.searchRecursive = function(node, value) {
+  //Base case
+  if (node == null) {
+    return false;
+  }
+
+  //Check if the node's value contains the required value
+  if (node.data == value) {
+    return true; //value found
+  }
+
+  //Recursive call to the next node in the list
+  return this.searchRecursive(node.nextElement, value);
+}
+
 let list = new LinkedList()
 for (var i = 0; i < 5; i++) {
   list.insertAtTail(i);
