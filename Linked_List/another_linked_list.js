@@ -114,6 +114,32 @@ function length() {
   return length;
 }
 
+function removeDuplicates(list) {
+  if (list.isEmpty()) {
+    return null;
+  }
+
+  //1->2->3->4->2
+  if (list.getHead().nextElement == null) {
+    return list;
+  }
+
+  let outerNode = list.getHead();
+  while (outerNode != null) {
+    let innerNode = outerNode; 
+    while (innerNode != null) {
+      if (innerNode.nextElement != null && outerNode.data == innerNode.nextElement.data) { 
+        innerNode.nextElement = innerNode.nextElement.nextElement;
+      } else {
+        innerNode = innerNode.nextElement;
+      }
+    }
+    outerNode = outerNode.nextElement;
+  }
+
+  return list;
+}
+
 let list = new LinkedList()
 for (var i = 0; i < 5; i++) {
   list.insertAtTail(i);
