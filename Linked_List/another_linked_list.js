@@ -104,6 +104,15 @@ LinkedList.prototype.deleteAtTail = function() {
   return this;
 }
 
+function length() {
+  let length = 0;
+  let currentNode = this.head;
+  while (currentNode != null) {
+    length = length + 1;
+    currentNode = currentNode.nextElement;
+  }
+  return length;
+}
 
 let list = new LinkedList()
 for (var i = 0; i < 5; i++) {
