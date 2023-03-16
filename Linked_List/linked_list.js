@@ -191,6 +191,7 @@ class SingleLinked{
                 current = current.next;
             }
         }
+        return dup;
     }
     sortList() {
         let sorted = null;
