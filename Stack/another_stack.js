@@ -46,3 +46,33 @@ class twoStacks {
     }
 
 }
+
+var stack = new twoStacks(8)
+stack.push1(10)
+stack.push2(20)
+stack.push1(30)
+stack.push2(40)
+stack.push1(60)
+
+function reverseK(queue, k) {
+    // [6,7,8,9,10,5,4,3,2,1], 5
+  //[1,2,3,4,5]
+  if(queue.isEmpty() == false){
+      let stack = new Stack();
+      let count = 0;
+      while(count < k){
+          stack.push(queue.dequeue());
+          count++;
+      }
+
+      while(stack.isEmpty() == false){
+          queue.enqueue(stack.pop());
+      }
+
+      for(i =0; i<(queue.size() - k); i++){
+           queue.enqueue(queue.dequeue());
+      }
+
+  }
+  return queue;
+}
