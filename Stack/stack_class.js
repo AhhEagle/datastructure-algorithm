@@ -28,7 +28,6 @@ class Stack{
             return null;
         } else {
             this.count = this.count - 1 
-            console.log(this.count)
             this.top = this.items[this.count - 1];
             return this.items.pop();
         }
@@ -81,7 +80,41 @@ function stackWithTwoQueues(){
     }
    
 }
-let q = new stackWithTwoQueues()
+
+function SortAStack(stack){
+     // stack = [23, 60, 97,42,12,4,2]
+    //temp = []
+    let temp = new Stack();
+    let val;
+    while(stack.isEmpty() == false){
+        val = stack.pop();
+        if(val>=temp.peek()){
+            temp.push(val);
+        } else {
+            while(temp.isEmpty() == false){
+                stack.push(temp.pop());
+            }
+            temp.push(val);
+        }
+
+    }
+
+    while(temp.isEmpty() == false){
+        stack.push(temp.pop());
+    }
+    return stack;
+
+}
+let q = new Stack();
+q.push(2)
+q.push(97)
+q.push(4)
+q.push(42)
+q.push(12)
+q.push(60)
+q.push(23);
+
+console.log(SortAStack(q));
 
 //let testStack =  new Stack();
 // console.log(testStack.push(5));
