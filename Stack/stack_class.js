@@ -79,7 +79,7 @@ function stackWithTwoQueues(){
     this.peek = function(){
         return queueTwo[queueTwo.length - 1];
     }
-
+   
 }
 let q = new stackWithTwoQueues()
 

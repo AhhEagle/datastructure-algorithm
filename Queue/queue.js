@@ -30,7 +30,6 @@ function QueueWithTwoStack(){
     this.toString = ()=>{
         return stackTwo
     }
-   
 }
 
 class QueueTwo {
