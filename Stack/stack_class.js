@@ -81,7 +81,7 @@ function stackWithTwoQueues(){
    
 }
 
-function SortAStack(stack){
+function sortAStack(stack){
      // stack = [23, 60, 97,42,12,4,2]
     //temp = []
     let temp = new Stack();
@@ -105,6 +105,28 @@ function SortAStack(stack){
     return stack;
 
 }
+
+function anotherSortStack(stack) {
+
+    if (!stack.isEmpty()) {
+        var val = stack.pop();
+        anotherSortStack(stack) 
+        insert(stack, val)
+        
+    }
+    return stack
+}
+
+function insert(stack, value) {
+    if (stack.isEmpty() || value < stack.getTop())
+        stack.push(value)
+    else {
+        let temp = stack.pop()
+        insert(stack, value)
+        stack.push(temp)
+    }
+
+}
 let q = new Stack();
 q.push(2)
 q.push(97)
@@ -114,7 +136,7 @@ q.push(12)
 q.push(60)
 q.push(23);
 
-console.log(SortAStack(q));
+console.log(sortAStack(q));
 
 //let testStack =  new Stack();
 // console.log(testStack.push(5));
