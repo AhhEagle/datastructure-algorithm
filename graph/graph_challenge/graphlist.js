@@ -14,4 +14,19 @@ class Graph{
         if (source < this.vertices && destination < this.vertices)
          this.list[source].insertAtHead(destination);
       }
+
+      strGraph() {
+        let str = "";
+        var i;
+        for (i = 0; i < this.list.length; i++) {
+          str = str + "|" + String(i) + "| => ";
+          let temp = this.list[i].getHead();
+          while (temp != null) {
+            str += ("[" + String(temp.data) + "] -> ");
+            temp = temp.nextElement;
+          }
+          str += "null ";
+        }
+        return str;
+      }
   }
