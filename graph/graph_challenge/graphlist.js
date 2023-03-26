@@ -13,6 +13,8 @@ class Graph{
     addEdge(source, destination) {
         if (source < this.vertices && destination < this.vertices)
          this.list[source].insertAtHead(destination);
+         //for an undirected graph 
+         //this.list[destination].insertAtHead(source);
       }
 
       strGraph() {
