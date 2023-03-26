@@ -17,35 +17,51 @@ class Graph{
          //this.list[destination].insertAtHead(source);
       }
 
-      strGraph() {
-        //breadth First
-        let str = "";
-        var i;
-        for (i = 0; i < this.list.length; i++) {
-          str = str + "|" + String(i) + "| => ";
-          let temp = this.list[i].getHead();
+       bfsTraversal_helper(g, source, visited, obj) {
+  
+  
+        //Create Queue(implemented in previous lesson) for Breadth First Traversal and enqueue source in it
+        let queue = new Queue(g.vertices);
+        queue.enqueue(source);
+        visited[source] = true;
+        //Traverse while queue is not empty
+        while (queue.isEmpty() == false) {
+          //Dequeue a vertex/node from queue and add it to result
+          let current_node = queue.dequeue();
+          obj.result += String(current_node);
+          //Get adjacent vertices to the current_node from the list,
+          //and if they are not already visited then enqueue them in the Queue
+          let temp = g.list[current_node].getHead();
           while (temp != null) {
-            str += ("[" + String(temp.data) + "] -> ");
+            if (visited[temp.data] == false) {
+              queue.enqueue(temp.data);
+              visited[temp.data] = true; //Visit the children
+            }
             temp = temp.nextElement;
           }
-          str += "null ";
         }
-        return str;
       }
-
-      dfGraph() {
-        //depth first 
-        let str = "";
-        var i;
-        for (i = 0; i < this.list.length; i++) {
-          str = str + "|" + String(i) + "| => ";
-          let temp = this.list[i].getHead();
-          while (temp != null) {
-            str += ("[" + String(temp.data) + "] -> ");
-            temp = temp.nextElement;
-          }
-          str += "null ";
+      
+       bfsTraversal(g)
+      {
+        if (g.vertices < 1){
+          return null;
         }
-        return str;
+        
+        var obj = {result: ''}
+      
+        //An array to hold the history of visited nodes
+        //Make a node visited whenever you push it into stack
+        let visited = [];
+        for (var x = 0; x < g.vertices; x++) {
+          visited.push(false);
+        }
+          
+        for (var i = 0; i < g.vertices; i++) {
+          if (!visited[i])
+            bfsTraversal_helper(g, i, visited, obj);
+        }
+      
+        return obj.result;
       }
   }
