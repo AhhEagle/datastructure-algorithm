@@ -138,5 +138,29 @@ detectCycleRec(g, i,visited, recNodes) {
     recNodes[i] = false;
     return false;
 }
+
+ detectCycle(g) {
+
+    var num_of_vertices = g.vertices;
+    //Boolean Array to hold the history of visited nodes (by default-false)
+    //Make a node visited whenever you traverse it
+     var visited = [];
+
+    //Boolean array of vertices which will recursively called
+     var recNodes = [];
+
+    for(var i = 0; i < num_of_vertices; i++)
+    {
+        visited[i] = false;
+        recNodes[i] = false;
+    }
+
+    for (var i = 0; i < num_of_vertices; i++) { // Recursive function called
+        if (detectCycleRec(g,i, visited, recNodes))
+            return true;
+        // If cycle detected, return true
+    }
+    return false;
+}
   
 }
