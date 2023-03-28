@@ -112,4 +112,31 @@ dfsTraversal(g)
   return obj.result;
 }
 
-  }
+
+detectCycleRec(g, i,visited, recNodes) {
+    // Check if current node is being visited in the same recursive call
+    if(visited[i]==false) {
+        // Set recursive array and visited to true
+        visited[i] = true;
+        recNodes[i] = true;
+
+        var adjacent;
+        let adjacentNode= g.list[i].getHead();
+        while (adjacentNode != null ) {
+            // Access adjacent node and repeat algorithm
+            adjacent = adjacentNode.data;
+            if ((!visited[adjacent]) && detectCycleRec(g, adjacent, visited, recNodes))
+                return true;  // Loop found
+            else if(recNodes[adjacent])
+              return true;
+            adjacentNode=adjacentNode.nextElement;
+        }
+
+    }
+
+
+    recNodes[i] = false;
+    return false;
+}
+  
+}
