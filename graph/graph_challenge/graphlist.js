@@ -162,5 +162,19 @@ detectCycleRec(g, i,visited, recNodes) {
     }
     return false;
 }
+
+findMotherVertex(g) {
+  //Traverse the Graph Array and perform DFS operation on each vertex
+  //The vertex whose DFS Traversal results is equal to the total number
+  //of vertices in graph is a mother vertex
+  let num_of_vertices_reached = 0;
+  for (var i = 0; i < g.vertices; i++) {
+    num_of_vertices_reached = DFS(g, i);
+    if (num_of_vertices_reached == g.vertices) {
+      return i;
+    }
+  }
+  return -1;
+}
   
 }
