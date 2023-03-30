@@ -256,5 +256,21 @@ findMotherVertex(g) {
   return lastV;
 }  
 
+// A recursive function to print DFS starting from v 
+ADFS(g, node, visited){
+
+  // Mark the current node as visited and print it 
+  visited[node] = true;
+
+  // Recur for all the vertices adjacent to this vertex
+  let temp = g.list[node].head;
+  while(temp){
+    if (visited[temp.data] == false){
+      ADFS(g, temp.data, visited);
+    }
+    temp = temp.nextElement;
+  }
+}
+
   
 }
