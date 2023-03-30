@@ -212,5 +212,49 @@ findMotherVertex(g) {
   }
   return vertices_reached + 1; //+1 is to include the source itself
 }
+
+ anotherFindMotherVertex(g){
+  // visited[] is used for DFS. Initially all are 
+  // initialized as not visited 
+  let visited = [];
+  for (var i=0; i<g.vertices; i++){
+    visited[i]=false;  
+  }
+
+  // To store last finished vertex (or mother vertex) 
+  let lastV=0;
+
+  // Do a DFS traversal and find the last finished 
+  // vertex 
+  for (var i=0; i<g.vertices; i++){ 
+    if (visited[i]==false){
+      ADFS(g, i, visited); 
+      lastV = i;
+    }
+  }
+
+  // If there exist mother vertex (or vetices) in given 
+  // graph, then v must be one (or one of them) 
+
+  // Now check if v is actually a mother vertex (or graph 
+  // has a mother vertex). We basically check if every vertex 
+  // is reachable from v or not. 
+
+  // Reset all values in visited[] as false and do 
+  // DFS beginning from v to check if all vertices are 
+  // reachable from it or not. 
+  for (var i=0; i<g.vertices; i++){
+    visited[i]=false;
+  }
+  ADFS(g, lastV, visited); 
+  
+  for(var j=0; j<visited.length; j++){
+    if(visited[j]==false){
+      return -1;
+    }
+  }
+  return lastV;
+}  
+
   
 }
