@@ -286,5 +286,46 @@ ADFS(g, node, visited){
   return sum / 2;
 }
 
+//Perfrom DFS Traversal starting from source and if you reach destination
+//then it means that there exist a path between source and destination 
+//In that case, return true and if you traverse the graph but can't reach 
+//the destination, then simply return false
+checkPath(g, source, destination) {
+  //Base case
+  if (source == destination){
+  return true;
+  }
+  //A list to hold the history of visited nodes (by default all false)
+  //Make a node visited whenever you push it into stack
+  let visited = [];
+  for (var x = 0; x < g.vertices; x++) {
+    visited.push(false);
+  }
+  //Create Stack
+  let stack = new Stack(g.vertices);
+  stack.push(source);
+  visited[source] = true;
+  //Traverse while stack is not empty
+  while (stack.isEmpty() == false) {
+    //Pop a vertex/node from stack
+    let current_node = stack.pop();
+    //Get adjacent vertices to the current_node from the list,
+    //and if only push unvisited adjacent vertices into stack
+    //Before pushing into stack, check if it's the destination
+    let temp = g.list[current_node].head;
+    while (temp != null) {
+      if (visited[temp.data] == false) {
+        if (temp.data == destination) {
+          return true;
+        }
+        stack.push(temp.data);
+        visited[temp.data] = true;
+      }
+      temp = temp.nextElement
+    }
+  }
+  return false;
+}
+
   
 }
