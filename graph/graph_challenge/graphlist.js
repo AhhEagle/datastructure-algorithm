@@ -327,5 +327,30 @@ checkPath(g, source, destination) {
   return false;
 }
 
+
+isTree(g) {
+  //All vertices unvisited
+  let visited = [];
+  for (var j = 0; j < g.vertices; j++) {
+    visited[j] = false;
+  }
+
+  //Check cycle using recursion stack
+  //Also mark nodes visited to check connectivity
+  if (checkCycle(g, 0, visited, -1) == true) {
+    return false;
+  }
+
+  //Check if all nodes we visited from the source (graph is connected)
+  for (var i = 0; i < visited.length; i++) {
+    //Graph is not connected
+    if (visited[i] == false) {
+      return false;
+    }
+  }
+  //Not cycle and connected graph
+  return true;
+}
+
   
 }
