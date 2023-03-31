@@ -352,5 +352,27 @@ isTree(g) {
   return true;
 }
 
+checkCycle(g, node, visited, parent) {
+  // Mark node as visited 
+  visited[node] = true;
+
+  //Pick adjacent node and run recursive DFS
+  let adjacent = g.list[node].head;
+  while (adjacent) {
+    if (visited[adjacent.data] == false) {
+      if (checkCycle(g, adjacent.data, visited, node) == true) {
+        return true;
+      }
+    }
+    //If adjacent is visited and not the parent node of the current node 
+    else if (adjacent.data != parent) {
+      // Cycle found
+      return true;
+    }
+    adjacent = adjacent.nextElement
+  }
+  return false;
+}
+
   
 }
