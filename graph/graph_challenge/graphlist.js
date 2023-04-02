@@ -421,5 +421,22 @@ findMin(g, a, b){
 return -1;
 }
 
+removeEdge(graph, source, dest){
+  if(graph.list.length == 0){
+    return graph;
+  }
+  
+  if(source >= graph.list.length || source < 0){
+    return graph;
+  }
+  
+  if(dest >= graph.list.length || dest < 0){
+    return graph;
+  }
+  
+  graph.list[source].deleteVal(dest);
+  return graph;
+}
+
   
 }
