@@ -38,6 +38,34 @@ class Trie{
     console.log("'" + key + "' inserted");
   }
     
+   //Function to search a given key in Trie
+   search(key){
+    
+    if (key == null){
+      return false; //null key
+    }
+    
+    key = key.toLowerCase();
+    let currentNode = this.root;
+    let index = 0;
+    
+    //Iterate the Trie with given character index,
+    //If it is null at any point then we stop and return false
+    //We will return true only if we reach leafNode and have traversed the
+    //Trie based on the length of the key
+    
+    for (var level=0; level<key.length; level++){ 
+      index = this.getIndex(key[level]);
+      if (currentNode.children[index] == null){
+        return false;
+      }
+      currentNode = currentNode.children[index];
+    }                                             
+    if (currentNode != null && currentNode.isEndWord){
+      return true;
+    }
+    return false; 
+  }
     
   //Function to search a given key in Trie
   search(key){
