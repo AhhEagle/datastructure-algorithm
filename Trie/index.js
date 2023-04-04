@@ -71,10 +71,16 @@ class Trie{
   search(key){
     return false; 
   }
-  //Function to delete given key from Trie
-  delete(key){
-    return;
+  
+ //Function to delete given key from Trie
+ delete(key){
+  if (this.root == null || key == null){
+   console.log("None key or empty trie error");
+   return;
   }
+ 
+  this.deleteHelper(key, this.root, key.length, 0);
+}
   //Helper Function to return true if currentNode does not have any children
   hasNoChildren(currentNode){
     for (var i=0; i<currentNode.children.length; i++){ 
