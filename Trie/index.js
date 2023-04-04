@@ -75,4 +75,13 @@ class Trie{
   delete(key){
     return;
   }
+  //Helper Function to return true if currentNode does not have any children
+  hasNoChildren(currentNode){
+    for (var i=0; i<currentNode.children.length; i++){ 
+      if (currentNode.children[i] != null)
+        return false;
+    }
+    return true;
+  }
+  
 }  
