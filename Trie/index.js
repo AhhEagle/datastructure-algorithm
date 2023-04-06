@@ -143,4 +143,20 @@ class Trie{
     return deletedSelf
   }
 
+  totalWords(rootN){
+  let result = 0;
+  
+  // Leaf denotes end of a word
+  if (rootN.isEndWord){
+    result += 1;
+  }
+  
+  for (var i=0; i<26; i++){ 
+    if (rootN.children[i] != null){
+      result += totalWords(rootN.children[i]);
+    }
+  }
+  return result;
+}
+
 }  
