@@ -159,4 +159,25 @@ class Trie{
   return result;
 }
 
+//Recursive Function to generate all words
+getWords(root, result, level, string){
+
+  //Leaf denotes end of a word
+  if (root.isEndWord){
+    //current word is stored till the 'level' in the character array
+    let temp = "";
+    for (var x=0; x<level; x++){
+      temp += String(string[x]);
+    }
+    result.push(temp);
+  }
+  for(var i=0; i<26; i++){ 
+      if (root.children[i] != null){
+        //Non-None child, so add that index to the character array
+        string[level] = String.fromCharCode(i + "a".charCodeAt(0));
+        getWords(root.children[i], result, level + 1, string);
+      }
+  }
+}
+
 }  
