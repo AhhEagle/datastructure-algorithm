@@ -180,4 +180,15 @@ getWords(root, result, level, string){
   }
 }
 
+findWords(root){
+  let result = [];
+  let chararr = [];
+  for(var i=0; i<20; i++){
+    chararr.push(null);
+  }
+  getWords(root, result, 0, chararr);
+  return result;
+}
+
+
 }  
