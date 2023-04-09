@@ -212,6 +212,24 @@ getWords(root,result,level,word){
     }
   }
 }
+sortArray(arr){
+  let result = [];
+  //Creating Trie and Inserting words from array
+  let trie = new Trie();
+  for (var x=0; x<arr.length; x++){ 
+    //console.log("inserting", arr[x]);
+    trie.insert(String(arr[x]), x);
+  }
+  
+  let word = [];
+  for(var i=0; i<26; i++){
+    word.push('');
+  }
+  getWords(trie.root, result, 0, word);
+  return result;
+}
+
+
 
 
 }  
