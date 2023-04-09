@@ -191,4 +191,27 @@ findWords(root){
 }
 
 
+//Recursive Function to generate all words in alphabetic order
+getWords(root,result,level,word){
+  //Leaf denotes end of a word
+  if (root.isEndWord){
+    //current word is stored till the 'level' in the character array
+    let temp = "";
+    for (var x=0; x<level; x++){ 
+      temp += word[x];
+      //console.log("pushing", word[x]);
+    }                          
+    result.push(temp);
+  }
+  
+  for (var i=0; i<26; i++){ 
+    if (root.children[i] != null){
+      //Non-null child, so add that index to the character array
+      word[level] = String.fromCharCode(i + "a".charCodeAt(0));
+      getWords(root.children[i], result, level + 1, word);
+    }
+  }
+}
+
+
 }  
