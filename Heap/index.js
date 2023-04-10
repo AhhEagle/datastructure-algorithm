@@ -16,3 +16,9 @@ function minHeapify(heap, index) {
     }
     return heap;
 }
+
+function convertMax(maxHeap) {
+    for (var i = Math.floor((maxHeap.length) / 2); i > -1; i--)
+        maxHeap = minHeapify(maxHeap, i)
+    return maxHeap
+}
