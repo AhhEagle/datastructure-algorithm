@@ -1,3 +1,4 @@
+const minHeap = require('./minHeap.js');
 function minHeapify(heap, index) {
     var left = index * 2;
     var right = (index * 2) + 1;
@@ -21,4 +22,20 @@ function convertMax(maxHeap) {
     for (var i = Math.floor((maxHeap.length) / 2); i > -1; i--)
         maxHeap = minHeapify(maxHeap, i)
     return maxHeap
+}
+
+
+
+function findKSmallest(arr, k) {
+  var myheap = new minHeap();
+  myheap.buildHeap(arr)
+  var kSmallest = [];
+  if(k > arr.length){
+    k = arr.length;
+  }
+  for (var i = 0; i < k; i++)
+    kSmallest.push(myheap.removeMin());
+
+  return kSmallest;
+
 }
