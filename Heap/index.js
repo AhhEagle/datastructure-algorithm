@@ -41,8 +41,6 @@ function findKSmallest(arr, k) {
 
 }
 
-
-
 function findKLargest(lst, k) {
     var heap = new maxHeap()
     heap.buildHeap(lst)
@@ -55,4 +53,8 @@ function findKLargest(lst, k) {
 
     return kLargest;
 }
+
+var lst = [9,4,7,1,-2,6,5]
+var k = 3
+console.log(findKLargest(lst,k))
   
