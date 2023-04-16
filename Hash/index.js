@@ -61,6 +61,22 @@ function isSubset(list1,list2){
   
 }
 
+function isDisjoint(list1,list2){  
+  //Write code here
+  let ht = new HashTable();
+  //Inserting list1's elements in ht
+  for(var i = 0; i < list1.length; i++){
+    ht.insert(list1[i], i);
+  }
+  //Checking to see if all of list2's elements are in the hashtable
+  for(var j = 0; j < list2.length; j++){
+    if(ht.search(list2[j]) != null){
+       return false; //return false if there is an element in list2 that is in list1
+    }
+  }
+  return true;
+}
+
 let ht = new HashTable();
 // Current capacity
 console.log(ht.slots);
