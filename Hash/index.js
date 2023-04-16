@@ -39,7 +39,28 @@ HashTable.prototype.resize = function (){
           }
   }
       this.bucket = new_bucket;
-}    
+}  
+
+function isSubset(list1,list2){ 
+  // If list2 has more elements than list1, it would not be the subset of list1
+  if (list2.length > list1.length){
+    return false;
+  } 
+  let ht=new HashTable();
+  //Inserting list1's elements in ht
+  for(var i=0; i<list1.length; i++){
+    ht.insert(list1[i], i);
+  }
+  //Checking to see if all of list2's elements are in the hashtable
+  for(var j=0; j<list2.length; j++){
+    if(ht.search(list2[j])==null){
+       return false; //return false if there is an element in list2 not in list1
+    }
+  }
+  return true;
+  
+}
+
 let ht = new HashTable();
 // Current capacity
 console.log(ht.slots);
