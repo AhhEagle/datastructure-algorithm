@@ -120,3 +120,39 @@ console.log("Symmetric pairs:");
 for (var y=0; y<res.length; y++){
   console.log('['+res[y][0]+', '+res[y][1]+'] ');
 }
+
+function tracePath(map){
+  let result = [];
+  //Create a reverse Map of given map i.e if given map has (N,C) then reverse map will have (C,N) as key value pair
+  //Traverse original map and see if corresponding key exist in reverse Map
+  //If it doesn't exist then we found our starting point.
+  //After starting point is found, simply trace the complete path from original map.
+  let reverseMap = {};
+  //To fill reverse map, iterate through the given map
+  for (var key in map){
+    reverseMap[map[key]] = key;
+  }
+  //Find the starting point of itinerary
+  let from_loc = null;
+  for (var key1 in map){
+    if (reverseMap[key1]==null){
+      from_loc = key1;
+      break;
+    }
+		//Trace complete path
+  }
+  let to = map[from_loc]
+  while (to != null){
+    result.push([from_loc, to])
+    from_loc = to;
+    to = map[to];
+  }
+  return result;
+}
+
+var map = {};
+map["NewYork"] = "Chicago";
+map["Boston"] = "Texas";
+map["Missouri"] = "NewYork";
+map["Texas"] = "Missouri";
+console.log(tracePath(map));
