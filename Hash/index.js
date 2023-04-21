@@ -203,3 +203,21 @@ function findSubZero(my_list){
   }
   return false;
 }
+
+function findSum(arr, value) {
+  let found_values = new HashTable();
+  var results=[];
+  for (let i in arr) {
+
+    if (found_values.search(value - arr[i]) != null) {
+       results.push(value-arr[i]);
+       results.push(arr[i]);
+       return results; 
+    }
+    
+    found_values.insert(arr[i],1);
+    
+  }
+
+  return false;
+};
