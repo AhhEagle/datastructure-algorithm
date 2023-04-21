@@ -220,4 +220,24 @@ function findSum(arr, value) {
   }
 
   return false;
-};
+}
+
+function findFirstUnique(arr) {
+	var hashtable = new HashTable()
+	for (var i = 0; i < arr.length; i++) {
+		if (hashtable.search(arr[i])!= null) {
+
+			hashtable.insert(arr[i], 0);
+
+		} else {
+			hashtable.insert(arr[i], 1);
+		}
+	}
+
+	for (var i = 0; i < arr.length; i++) {
+		if (hashtable.search(arr[i]) == 1)
+			return arr[i];
+	}
+
+	return null;
+}
