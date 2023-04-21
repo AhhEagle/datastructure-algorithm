@@ -281,3 +281,21 @@ list.insertAtHead(7);
 list.printList();
 removeDuplicates(list);
 list.printList();
+
+function union(list1, list2) {
+  // Write your code here
+  let hashtable = new HashTable();
+  let list1Iter = list1.getHead();
+  while(list1Iter != null){
+    hashtable.insert(list1Iter.data, 1);
+    list1Iter = list1Iter.nextElement;
+  }
+  let list2Iter = list2.getHead();
+  while(list2Iter != null){
+    if (hashtable.search(list2Iter.data) == null) {
+      list1.insertAtHead(list2Iter.data);
+    }
+    list2Iter = list2Iter.nextElement;
+  }
+  return list1;
+}
