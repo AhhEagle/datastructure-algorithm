@@ -272,10 +272,7 @@ list.insertAtHead(7);
 list.insertAtHead(7);
 list.insertAtHead(7);
 list.insertAtHead(22);
-list.insertAtHead(14);
-list.insertAtHead(21);
-list.insertAtHead(14);
-list.insertAtHead(7);
+
 
 
 list.printList();
