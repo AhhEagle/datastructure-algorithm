@@ -246,7 +246,6 @@ function findFirstUnique(arr) {
 function removeDuplicates(list) {
   let currentNode = list.getHead();
   let prevNode = list.getHead();
-  //To store values of nodes which we already visited
   let visitedNodes = new HashTable();
   //If List is not empty and there is more than 1 element in List
   if (!list.isEmpty() && currentNode.nextElement != null) {
