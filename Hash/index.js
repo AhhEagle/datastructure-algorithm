@@ -63,7 +63,6 @@ function isSubset(list1,list2){
 }
 
 function isDisjoint(list1,list2){  
-  //Write code here
   let ht = new HashTable();
   //Inserting list1's elements in ht
   for(var i = 0; i < list1.length; i++){
@@ -140,7 +139,6 @@ function tracePath(map){
       from_loc = key1;
       break;
     }
-		//Trace complete path
   }
   let to = map[from_loc]
   while (to != null){
@@ -279,7 +277,6 @@ removeDuplicates(list);
 list.printList();
 
 function union(list1, list2) {
-  // Write your code here
   let hashtable = new HashTable();
   let list1Iter = list1.getHead();
   while(list1Iter != null){
