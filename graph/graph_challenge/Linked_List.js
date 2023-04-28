@@ -57,10 +57,7 @@ export default class LinkedList {
       }
     }
     insertAtTail(newData) {
-      //Creating a new Node with data as newData
       let node = new Node(newData);
-  
-      //check for case when list is empty
       if (this.isEmpty()) {
         //Needs to Insert the new node at Head
         this.head = node;
