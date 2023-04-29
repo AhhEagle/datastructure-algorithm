@@ -63,11 +63,8 @@ export default class LinkedList {
         this.head = node;
         return this;
       }
-  
-      //Start from head
       let currentNode = this.head;
   
-      //Iterate to the last element
       while (currentNode.next != null) {
         currentNode = currentNode.next;
       }
