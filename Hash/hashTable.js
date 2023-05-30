@@ -1,5 +1,5 @@
 "use strict";
-const HashEntry = require('./hashEntry.js');
+const HashEntry = require("./hashEntry.js");
 
 module.exports = class HashTable {
   //Constructor
@@ -15,7 +15,7 @@ module.exports = class HashTable {
       this.bucket[i] = null;
     }
   }
-  //Helper Functions  
+  //Helper Functions
   get_size() {
     return this.size;
   }
@@ -27,4 +27,4 @@ module.exports = class HashTable {
   isEmpty() {
     return this.get_size() == 0;
   }
-}
+};
