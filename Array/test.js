@@ -88,8 +88,6 @@ function longestSum(nums, k) {
   return ans;
 }
 
-console.log(longestSum([1, 2, 4, 3, 5], 6));
-
 function longestSub(str) {
   //"1101100111"
   //can only flip one zero
