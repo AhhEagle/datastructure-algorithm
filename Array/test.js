@@ -90,7 +90,7 @@ function longestSum(nums, k) {
 
 function longestSub(str) {
   //"1101100111"
-  //can only flip one zero
+  //can only flip one zero at a time
   let left = 0,
     curr = 0,
     ans = 0;
