@@ -2,14 +2,13 @@
 const HashEntry = require("./hashEntry.js");
 
 module.exports = class HashTable {
-  //Constructor
   constructor() {
     //Size of the HashTable
     this.slots = 10;
     //Current entries in the table
     //Used while resizing the table when half of the table gets filled
     this.size = 0;
-    //List of HashEntry objects (by deafult all null)
+    //List of HashEntry objects 
     this.bucket = [];
     for (var i = 0; i < this.slots; i++) {
       this.bucket[i] = null;
