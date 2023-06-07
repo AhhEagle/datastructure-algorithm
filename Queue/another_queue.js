@@ -1,4 +1,4 @@
-//generate binary numbers from 1 till n
+
 function findBin(n) {
   let result = [];
   let myQueue = new Queue();
