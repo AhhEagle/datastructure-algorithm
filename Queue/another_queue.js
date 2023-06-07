@@ -1,4 +1,3 @@
-
 function findBin(n) {
   let result = [];
   let myQueue = new Queue();
