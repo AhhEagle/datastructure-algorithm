@@ -30,5 +30,4 @@ export default class LinkedList {
 let test = new LinkedList();
 test.appendNode("6");
 test.appendNode("8");
-test.appendNode("9");
 test.printList();
