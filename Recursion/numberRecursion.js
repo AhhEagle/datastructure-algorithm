@@ -26,4 +26,4 @@ function gcd(testVariable1, testVariable2) {
   }
 }
 
-console.log(gcd(6, 9));
+
