@@ -1,5 +1,5 @@
 //two-pass approach
-// Returns true if the character ch is a divion
+// Returns true if the character ch is a division
 // or a multiplication operator
 let isDivOrMul = function (ch) {
   return ch === "*" || ch === "/";
