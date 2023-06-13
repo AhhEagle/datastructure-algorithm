@@ -22,7 +22,6 @@ function reverseStr(str) {
   }
   return reversed;
 }
-
 function reverseWord(str) {
   if (str == null || str == undefined) {
     return "";
@@ -34,6 +33,7 @@ function reverseWord(str) {
   }
   return reversedWord;
 }
+
 function anotherReverse(str) {
   let newWord = str.trim().split(" ");
   return newWord.reverse().join(" ");
