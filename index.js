@@ -183,8 +183,6 @@ function power(n = "") {
   return result;
 }
 
-//console.log(power('dimeji'));
-
 //O(n!)
 //Factorial permutations and combinations
 function getPermutation(string, prefix = "") {
