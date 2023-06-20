@@ -246,9 +246,10 @@ s.add("1000");
 var o = { 1: "1st", 2: "2nd" };
 s.add(o);
 s.add({ 1: "1st", 2: "2nd" });
-//console.log(s)
+
 let c = ["a", "b", "c"];
 //console.log(c.splice(1));
+
 function Cars(car, color) {
   var car = car;
   var color = color;
@@ -287,7 +288,6 @@ function* maths(value) {
   yield value / b;
 }
 const calcSums = maths(5);
-//console.log(calcSums.next().value);
 //console.log(calcSums.next().value);
 //console.log(calcSums.next().value);
 //console.log(calcSums.next().value);
