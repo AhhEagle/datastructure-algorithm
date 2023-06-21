@@ -170,7 +170,6 @@ function mergeSorted(array1 = [], array2 = []) {
 //console.log(mergeSorted(['aliyu', 'cataloguer', 'egg'], ['babade', 'dog', 'fish']))
 
 //O(2^n) Exponential time
-//i.e Power set
 function power(n = "") {
   const array = Array.from(n);
   const base = [""];
