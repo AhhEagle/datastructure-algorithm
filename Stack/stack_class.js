@@ -132,6 +132,4 @@ console.log(sortAStack(q));
 
 //let testStack =  new Stack();
 // console.log(testStack.push(5));
-// console.log(testStack.push(7));
-// console.log(testStack.push(8));
 // console.log(testStack.peek());
