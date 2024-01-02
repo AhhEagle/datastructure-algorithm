@@ -108,9 +108,6 @@ function getMaxProfit(prices) {
 
 // let test = new Array();
 // test.insert(6);
-// test.insert(7);
-// test.insert(8);
-// test.insert(9);
 // console.log(test.removeAt(0));
 // console.log(test);
 
